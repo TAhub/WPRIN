@@ -1,0 +1,1457 @@
+*SHEET sht
+/ file width height xOrigin yOrigin maxNum drawPhase (0 = normal, 1 = lighting, 2 = post-light, 3 = background)
+tileset #sprTiles 50 50 0 0 600 0
+decorations #sprDecorations 50 50 0 0 30 0
+decorationsLarge #sprDecorationsLarge 100 80 0 30 10 0
+/ big bodies
+bigLegs #sprBigLegs 45 22 23 22 40 0
+bigBackArms #sprBigBackArms 60 60 22 45 40 0
+bigBody #sprBigBodies 30 30 15 30 60 0
+hugeBody #sprHugeBodies 200 100 100 100 40 0
+hugeBody2 #sprHugeBodies2 200 100 100 100 40 0
+bigArmor #sprBigArmor 40 40 20 30 40 0
+bigWeapon #sprBigWeapons 80 85 22 70 40 0
+bigHead #sprBigHeads 30 30 15 30 80 0
+/ normal-sized bodies
+hairBack #sprHairBack 24 50 12 20 20 0
+legs #sprLegs 30 17 15 15 30 0
+backArms #sprBackArms 40 40 15 30 30 0
+body #sprBodies 20 20 10 20 30 0
+armor #sprArmor 20 30 10 20 30 0
+frontArms #sprFrontArms 40 40 15 30 30 0
+weapon #sprWeapon 50 65 15 50 30 0
+wideWeapon #sprWideWeapon 100 65 40 50 10 0
+head #sprHeads 20 20 10 20 30 0
+hair #sprHair 24 40 12 30 20 0
+hat #sprHat 20 30 10 25 30 0
+projectile #sprProjectile 20 10 10 5 50 0
+/ medium bodies
+mediumBody #sprMediumBodies 60 40 30 40 50 0
+/ lighting
+tileLight #sprTileLight 50 50 0 0 300 1
+circleLight #sprCircleLight 120 120 60 60 200 1
+/ post-lighting stuff
+summonLightning #sprSummonLightning 40 14 20 14 100 2
+summonLightningBase #sprSummonLightningBase 40 20 20 20 2 2
+particle #sprParticle 10 10 5 5 4000 2
+/ UI stuff
+item #sprItem 40 40 20 20 200 2
+ammoGauge #sprAmmoGauge 10 40 0 0 20 2
+number #sprNumber 17 20 0 0 50 2
+letter #sprLetter 15 15 0 0 600 2
+/ background stuff
+background #sprBackground 40 600 0 0 25 3
+backgroundObjects #sprBackgroundObject 80 400 0 0 50 3
+bigBackgroundObjects #sprBigBackgroundObject 80 800 0 0 30 3
+/
+/
+*PARTFORM pfrm
+/ sheet relativeTo (empty reference means bottom-middle of hitbox) xOff yOff hMoveXLean bobX bobY walkAnim attackAnim drawArmor drawWeapon hasGender color secondSheet drawHat
+/ normal sized human stuff
+humanHead sht_head 1 2 -18 1 1 1 false false false false false 0 none true
+humanEye sht_head 2 0 0 0 0 0 false false false false false none none false
+humanHair sht_hair 2 0 0 0 0 0 false false false false true 2 sht_hairBack false
+humanPupil sht_head 2 0 0 0 0 0 false false false false false 1 none false
+humanBody sht_body 0 0 -13 2 0 1 false false true false true 0 none false
+humanLegs sht_legs none 0 0 0 0 0 true false false false false 0 none false
+humanArms sht_backArms 1 0 0 0 0 0 false true false true false 0 sht_frontArms false
+/ skeleton stuff
+skeletonHead sht_head 1 2 -16 1 1 1 false false false false false 1 none true
+skeletonBody sht_body 0 0 -13 2 0 1 false false true false false 1 none false
+/ robot stuff
+robotHead sht_head 1 0 -18 0 0 0 false false false false false 0 none false
+robotEyes sht_head 1 0 -18 0 0 0 false false false false false 1 none true
+robotBody sht_body 0 0 -13 0 0 0 false false true false false 0 none false
+/ half-human stuff
+halfHumanLegs sht_legs none 0 0 0 0 0 true false false false false 2 none false
+halfHumanTail sht_legs 1 -4 8 0 0 0 true false false false false 2 none false
+/ darklander
+darklanderHair sht_hair 2 0 0 0 0 0 false false false false false 2 sht_hairBack false
+/ tindermen stuff
+tinderArms sht_backArms 1 0 6 0 0 0 false true false true false 0 sht_frontArms false
+/ deepmen stuff
+bigLegs sht_bigLegs none 0 0 0 0 0 true false false false false 0 none false
+bigBody sht_bigBody 0 1 -20 1 0 -1 false false true false false 0 none false
+bigHead sht_bigHead 1 5 -25 1 0 3 false false false false false 0 none false
+bigEye sht_bigHead 2 0 0 0 0 0 false false false false false none none false
+bigPupil sht_bigHead 2 0 0 0 0 0 false false false false false 1 none true
+bigArms sht_bigBackArms 1 0 0 0 0 0 false true false true false 0 none false
+/ flying blade stuff
+saw sht_bigHead none 0 0 0 0 0 false true false false false 0 none false
+/ roller stuff
+rollerWeapon sht_hugeBody none 0 0 0 0 0 false true false true false 1 none false
+rollerBody sht_hugeBody 0 0 0 0 0 0 false false false false false 0 none true
+rollerTrim sht_hugeBody 0 0 0 0 0 0 true false false false false 1 none false
+/ wolf stuff
+wolfBody sht_mediumBody none 0 0 1 0 1 false false false false false 0 none false
+wolfMisc sht_mediumBody none 0 0 0 0 0 true false false false false 0 none false
+wolfHead sht_mediumBody 1 0 0 1 0 -2 false true false true false 0 none false
+/ food animal stuff
+foodAnimalHead sht_mediumBody none 8 0 1 0 1 false true false true false 0 none false
+/ leafer stuff
+leaferTrunk sht_mediumBody 0 0 -9 0 0 1 false false false false false 0 none false
+leaferLeaves sht_mediumBody 1 0 0 0 0 0 false false false false false 1 none false
+/ whelk stuff
+whelkShell sht_hugeBody none 0 0 0 0 0 false false false false false 0 none false
+whelkMoss sht_hugeBody 0 0 0 0 0 0 false false false false false 1 none false
+whelkBody sht_hugeBody 0 0 0 0 0 0 true false false false false 2 none false
+/ flower stuff
+flowerStem sht_bigBody none 0 0 0 0 0 false false false false false 0 none false
+flowerFlower sht_bigBody 0 0 -10 0 0 0 false false false false false 1 none false
+/ snowman stuff
+snowFrontArm sht_frontArms 1 0 0 0 0 0 false false false false false 1 none false
+snowBackArm sht_backArms 1 0 0 0 0 0 false true false true false 1 none false
+snowLegs sht_body none 0 0 0 0 0 false false false false false 0 none false
+snowBody sht_body 0 0 -13 1 0 1 false false false false false 0 none false
+snowHead sht_head 1 4 -13 1 0 1 false false false false false 0 none false
+/ flyskull stuff
+flySkull sht_bigHead none 0 0 0 2 0 false false false false false 0 none false
+/ copter stuff
+copter sht_bigHead none 0 0 0 2 0 true false false false false 0 none false
+/ spider stuff
+spiderLegs sht_mediumBody none 0 0 0 0 0 true false false false false 1 none false
+spiderBody sht_mediumBody 0 0 0 0 0 1 false true false false false 0 none false
+/ chest stuff
+chestFrame sht_mediumBody none 0 0 0 0 0 false false false false false 0 none false
+chestBody sht_mediumBody none 0 0 0 0 0 false false false false false 1 none false
+/ big wolf stuff
+bigWolfBody sht_hugeBody none 0 0 2 0 2 false false false false false 0 none false
+bigWolfMisc sht_hugeBody none 0 0 0 0 0 true false false false false 0 none false
+bigWolfHead sht_hugeBody 1 0 0 2 0 -4 false false false false false 0 none false
+bigWolfGlow sht_circleLight 4 40 -60 0 0 0 false false false false false 1 none false
+/ neo roller stuff
+neoRollerBody sht_hugeBody2 none 0 0 0 0 0 false false false false false 0 none true
+neoRollerTrim sht_hugeBody2 0 0 0 0 0 0 true false false false false 1 none false
+neoRollerLotus sht_hugeBody2 0 0 -45 0 0 0 false false false false false 2 none false
+neoRollerGlow1 sht_circleLight 2 8 -90 0 0 0 false false false false false 3 none false
+neoRollerGlow2 sht_circleLight 2 8 -90 0 0 0 false false false false false 4 none false
+neoRollerGlow3 sht_circleLight 2 8 -90 0 0 0 false false false false false 5 none false
+neoRollerGlow4 sht_circleLight 2 8 -90 0 0 0 false false false false false 6 none false
+/ tombstone
+tombstone sht_bigBody none 0 0 0 0 0 false false false false false 0 none false
+/
+/
+*RACE rce
+/ hitWidth hitHeight projX projY blood hitSound numParts pform (1-?) frameLists (1-?)
+/ humans have to have this specific part order, or the character designer will break
+human 20 40 25 -30 ptc_blood snd_fleshHit 7 pfrm_humanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_humanPupil pfrm_humanHair lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils lst_humanHairs
+darklander 20 40 25 -30 ptc_blueBlood snd_fleshHit 6 pfrm_humanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_darklanderHair lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_darklanderHairs
+halfHuman 20 40 25 -30 ptc_blood snd_fleshHit 8 pfrm_halfHumanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_humanPupil pfrm_halfHumanTail pfrm_humanHair lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils lst_halfHumanTail lst_halfHumanHairs
+wprin 20 40 25 -30 ptc_blood snd_fleshHit 7 pfrm_humanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_humanPupil pfrm_humanHair lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils lst_wprinHairs
+king 20 40 25 -30 ptc_blood snd_fleshHit 6 pfrm_humanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_humanPupil lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils
+tinderMen 15 40 25 -24 ptc_sap snd_woodHit 3 pfrm_humanLegs pfrm_humanBody pfrm_tinderArms lst_zero lst_tinderBody lst_zero
+brittleMan 20 40 25 -30 ptc_blood snd_fleshHit 6 pfrm_humanLegs pfrm_humanBody pfrm_humanHead pfrm_humanArms pfrm_humanEye pfrm_humanPupil lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils
+deepMan 40 60 38 -45 ptc_metalScrap snd_stoneHit 6 pfrm_bigLegs pfrm_bigBody pfrm_bigHead pfrm_bigArms pfrm_bigEye pfrm_bigPupil lst_zero lst_zero lst_zero lst_zero lst_humanEyes lst_humanPupils
+fBlade 30 30 15 -15 ptc_metalScrap snd_metalHit 1 pfrm_saw lst_fBladeHead
+roller 180 70 100 -24 ptc_metalScrap snd_metalHit 3 pfrm_rollerWeapon pfrm_rollerBody pfrm_rollerTrim none lst_zero lst_rollerTrim
+whelk 50 70 40 -30 ptc_blueBlood snd_woodHit 3 pfrm_whelkShell pfrm_whelkBody pfrm_whelkMoss lst_whelkShell lst_whelkBody lst_whelkMoss
+wolf 45 30 20 -20 ptc_blood snd_fleshHit 5 pfrm_wolfMisc pfrm_wolfBody pfrm_wolfMisc pfrm_wolfMisc pfrm_wolfHead lst_wolfBgLegs lst_wolfBody lst_wolfFgLegs lst_wolfTail lst_zero
+leafer 25 50 0 -38 ptc_sap snd_woodHit 3 pfrm_humanLegs pfrm_leaferTrunk pfrm_leaferLeaves lst_zero lst_leaferTrunk lst_leaferLeaves
+flower 22 40 0 -26 ptc_sap snd_fleshHit 2 pfrm_flowerStem pfrm_flowerFlower lst_flowerStem lst_flowerFlower
+snowman 15 40 25 -30 ptc_snow snd_fleshHit 5 pfrm_snowLegs pfrm_snowBody pfrm_snowFrontArm pfrm_snowBackArm pfrm_snowHead lst_snowBody lst_snowBody lst_snowArms lst_snowArms lst_snowHead
+flySkull 25 25 5 -10 ptc_snow snd_metalHit 1 pfrm_flySkull lst_bigSkull
+copter 25 25 10 -10 ptc_sap snd_fleshHit 1 pfrm_copter lst_flyPlantBody
+foodAnimal 40 25 0 0 ptc_blood snd_fleshHit 4 pfrm_wolfMisc pfrm_wolfBody pfrm_wolfMisc pfrm_foodAnimalHead lst_wolfBgLegs lst_foodAnimalBody lst_wolfFgLegs lst_foodAnimalHead
+spider 45 30 0 0 ptc_blueBlood snd_fleshHit 4 pfrm_spiderLegs pfrm_spiderBody pfrm_spiderLegs pfrm_spiderBody lst_spiderBackLegs lst_spiderBody lst_spiderFrontLegs lst_spiderHead
+chest 48 27 0 0 ptc_woodScrap snd_woodHit 2 pfrm_chestFrame pfrm_chestBody lst_chestFrame lst_chestBody
+barrel 20 16 0 0 ptc_woodScrap snd_woodHit 2 pfrm_chestFrame pfrm_chestBody lst_barrelFrame lst_barrelBody
+bigWolf 90 75 50 -50 ptc_blood snd_fleshHit 6 pfrm_bigWolfMisc pfrm_bigWolfBody pfrm_bigWolfMisc pfrm_bigWolfMisc pfrm_bigWolfHead pfrm_bigWolfGlow lst_bigWolfBgLegs lst_bigWolfBody lst_bigWolfFgLegs lst_bigWolfTail lst_bigWolfHead lst_bigWolfGlow
+neoRoller 180 100 8 -135 ptc_metalScrap snd_metalHit 7 pfrm_neoRollerBody pfrm_neoRollerTrim pfrm_neoRollerLotus pfrm_neoRollerGlow1 pfrm_neoRollerGlow2 pfrm_neoRollerGlow3 pfrm_neoRollerGlow4 lst_neoRollerBody lst_neoRollerTrim lst_neoRollerLotus lst_zero lst_zero lst_zero lst_zero
+luxRoller 180 70 30 -135 ptc_metalScrap snd_metalHit 3 pfrm_neoRollerBody pfrm_neoRollerTrim pfrm_neoRollerLotus lst_neoRollerBody lst_neoRollerTrim lst_luxRollerCannon
+spoop 20 40 25 -30 ptc_metalScrap snd_woodHit 4 pfrm_humanLegs pfrm_skeletonBody pfrm_skeletonHead pfrm_humanArms lst_zero lst_skeletonBody lst_skeletonHead lst_zero
+robot 20 40 25 -30 ptc_metalScrap snd_metalHit 5 pfrm_humanLegs pfrm_robotBody pfrm_robotHead pfrm_robotEyes pfrm_humanArms lst_zero lst_robotBody lst_robotHead lst_robotEyes lst_zero
+tombstone 20 20 0 0 ptc_metalScrap snd_stoneHit 1 pfrm_tombstone lst_tombstones
+richTombstone 20 20 0 0 ptc_metalScrap snd_stoneHit 1 pfrm_tombstone lst_richTombstones
+/
+/
+*TILE tl
+/ frame color solid oneWay greenery1 greenery2
+caveStone 0 clr_caveStone true false none none
+caveStoneTop 1 clr_caveStone true false 2 3
+caveStoneBack 0 clr_caveStoneBack false false none none
+caveStonePlat 1 clr_caveStoneBack true true 2 3
+coldStone 0 clr_coldStone true false none none
+coldStoneTop 1 clr_coldStone true false 2 3
+coldStoneBack 0 clr_coldStoneBack false false none none
+coldStonePlat 1 clr_coldStoneBack true true 2 3
+iceBack 16 clr_ice false false none none
+icePlat 16 clr_ice true true 2 3
+bricks 10 clr_temple true false none none
+bricksTop 11 clr_temple true false 2 3
+bricksBack 10 clr_templeBack false false none none
+bricksPlat 11 clr_templeBack true true 2 3
+caveStoneBack 0 clr_caveStoneBack false false none none
+caveStonePlat 1 clr_caveStoneBack true true 2 3
+pillarsBack 12 clr_templeBack false false none none
+pillarsPlat 13 clr_templeBack true true 2 3
+burntStone 0 clr_burntStone true false none none
+burntStoneTop 1 clr_burntStone true false 2 3
+burntStoneBack 0 clr_burntStoneBack false false none none
+burntStonePlat 1 clr_burntStoneBack true true 2 3
+burntStoneBack 0 clr_burntStoneBack false false none none
+burntStonePlat 1 clr_burntStoneBack true true 2 3
+bricksBack 10 clr_templeBurnedBack false false none none
+bricksPlat 11 clr_templeBurnedBack true true 2 3
+/
+/
+*TILESET tlst
+/ tileStart numBackTypes greeneryColorA greeneryColorB tileLightA tileLightB encounterDatas trapList trapPercentage thingsPer thingsPerMulti foodAnimal foodAnimalNumber decorationsList numBackgrounds background* (1-?)
+caveStone tl_caveStone 1 none clr_caveGreenery clr_caveTileLightA clr_caveTileLightB lst_caveStoneDataList lst_caveStoneTraps 60 110 160 ctyp_foodAnimal 5 lst_caveStoneDecorations 3 blyr_caveBack blyr_caveBackStalag blyr_caveBackStalac
+caveCold tl_coldStone 2 clr_snow clr_coldGreenery clr_coldTileLightA clr_coldTileLightB lst_coldStoneDataList lst_coldStoneTraps 70 140 190 ctyp_foodAnimal2 4 lst_coldStoneDecorations 3 blyr_coldBack blyr_coldBackIcePillars blyr_coldBackIcePillars2
+temple tl_bricks 3 none clr_templeGreenery clr_templeTileLightA clr_templeTileLightB lst_templeDataList lst_templeTraps 80 160 230 ctyp_foodCrate 3 lst_templeDecorations 3 blyr_caveBack blyr_caveBackStalac blyr_templeSkyline
+lava tl_burntStone 3 clr_smoke none clr_lavaLightA none lst_lavaDataList lst_lavaTraps 90 190 260 ctyp_foodAnimal3 5 lst_lavaDecorations 5 blyr_burntBack blyr_lava2 blyr_lavaStalag blyr_lava1 blyr_lavaStalac
+/
+/
+*ENCOUNTERDATA encd
+/ startLevel basePlatforms platformsRamp baseEncounters encountersRamp bossList enemyList
+/ note that the maximum number of encounters is the number of platforms - 3
+caveStoneStart 0 8 1 3 1 lst_caveStoneBossLow lst_caveStoneEnemyLow
+caveStone2 3 12 1 7 1 lst_caveStoneBossMedium lst_caveStoneEnemyMedium
+caveStone3 6 16 1 11 1 lst_caveStoneBossHigh lst_caveStoneEnemyHigh
+coldStoneStart 8 10 1 6 1 lst_coldStoneBossLow lst_coldStoneEnemyLow
+coldStone2 11 13 1 9 1 lst_coldStoneBossMedium lst_coldStoneEnemyMedium
+coldStone3 14 16 1 12 1 lst_coldStoneBossHigh lst_coldStoneEnemyHigh
+templeStart 16 12 1 7 1 lst_templeBossLow lst_templeEnemyLow
+temple2 19 14 2 9 2 lst_templeBossMedium lst_templeEnemyMedium
+temple3 22 22 2 15 2 lst_templeBossHigh lst_templeEnemyHigh
+lavaStart 24 8 2 4 2 lst_lavaBossLow lst_lavaEnemyLow
+lava2 27 14 2 10 2 lst_lavaBossMedium lst_lavaEnemyMedium
+lava3 30 20 2 16 2 lst_lavaBossHigh lst_lavaEnemyHigh
+/
+/
+*WEAPON wp
+/ type damage attack interval (ms) sheet frame projectile/reach itemFrame name baseCost sound
+/ type 0: melee
+sword 0 6 0 600 sht_weapon 0 20 4 #wepSword 24 snd_sword
+knife 0 4 0 400 sht_weapon 11 15 5 #wepKnife 12 snd_knife
+axe 0 6 1 700 sht_weapon 15 20 9 #wepAxe 18 snd_sword
+whip 0 1 0 380 sht_wideWeapon 0 50 13 #wepWhip 6 snd_whip
+flail 0 2 0 380 sht_wideWeapon 4 50 38 #wepFlail 7 snd_whip
+pick 0 3 1 700 sht_weapon 23 20 9 none 0 snd_sword
+wprinStaff 0 4 0 650 sht_weapon 27 20 32 #wepStaff 500 snd_sword
+monsterKnife 0 2 0 600 sht_weapon 11 15 none none 0 snd_knife
+monsterJaw 0 2 0 700 sht_mediumBody 17 20 none none 0 snd_knife
+monsterSword 0 3 0 750 sht_weapon 0 20 none none 0 snd_sword
+monsterAxe 0 4 0 800 sht_weapon 15 30 none none 0 snd_sword
+monsterHammer 0 4 0 900 sht_bigWeapon 0 40 none none 0 snd_hammer
+monsterGreatsword 0 4 0 750 sht_bigWeapon 4 30 none none 0 snd_hammer
+monsterSaw 0 1 0 300 none 0 10 none none 0 none
+monsterRam 0 8 0 1000 sht_hugeBody 6 70 none none 0 snd_hammer
+monsterCannonSlam 0 4 0 1000 sht_hugeBody 10 60 none none 0 snd_hammer
+monsterWhelkSlam 0 0 0 900 none 0 30 none none 0 none
+monsterIcicleSword 0 2 0 650 sht_weapon 19 20 none none 0 snd_sword
+monsterSpiderbite 0 2 0 900 none 0 30 none none 0 snd_sword
+monsterTusks 0 2 0 800 sht_mediumBody 49 15 none none 0 snd_sword
+monsterFist 0 2 0 400 none 0 10 none none 0 snd_sword
+/ type 1: crossbow-type
+crossbow 1 6 1 1100 sht_weapon 4 prj_arrow 6 #wepCrossbow 30 snd_bow
+/ type 2: bow-type
+bow 2 5 0 700 sht_weapon 7 prj_arrow 7 #wepBow 24 snd_bow
+monsterBow 2 2 0 800 sht_weapon 7 prj_arrow none none 0 snd_bow
+monsterGreatCrossbow 2 5 0 1000 sht_bigWeapon 8 prj_bigArrow none none 0 snd_bow
+monsterCannon 2 8 0 900 sht_hugeBody 10 prj_cannonBall none none 0 snd_cannon
+monsterLightCannon 2 1 0 200 none 0 prj_lightbolt none none 0 snd_light
+monsterLeafthrower 2 1 0 550 none 0 prj_leaf none none 0 snd_knife
+monsterBlueLeafthrower 2 1 0 400 none 0 prj_blueLeaf none none 0 snd_knife
+monsterBlackLeafthrower 2 1 0 400 none 0 prj_blackLeaf none none 0 snd_knife
+monsterWhelkFireball 2 0 0 1000 none 0 prj_fireball none none 0 snd_fire
+monsterWhelkIceball 2 0 0 1000 none 0 prj_iceball none none 0 snd_ice
+monsterWhelkLightningball 2 0 0 1000 none 0 prj_lightningball none none 0 snd_electric
+monsterSnowballThrow 2 1 0 400 none 0 prj_snowball none none 0 snd_sword
+monsterIceSkullShot 2 3 0 900 none 0 prj_iceBolt none none 0 snd_ice
+monsterFireSkullShot 2 3 0 950 none 0 prj_firebolt none none 0 snd_fire
+monsterCopterShot 2 2 0 800 none 0 prj_copterShot none none 0 snd_sword
+/ type 3: boss tool
+bossTool 3 0 0 0 none 0 200 none none 0 none
+/
+/
+*ARMOR arm
+/ defense sheet frame itemFrame name baseCost speedBonus
+noArmor 0 none 0 none none 0 0
+/ player armor
+plate 1 sht_armor 0 3 #armPlate 36 0
+jerkin 0 sht_armor 4 2 #armJerkin 18 0
+mail 0 sht_armor 20 36 #armMail 28 20
+rags 0 sht_armor 6 22 #armRags 5 5
+poncho 0 sht_armor 8 25 #armPoncho 6 5
+darklanderPlate 1 sht_armor 10 26 #armDarklanderPlate 36 5
+/ monster armor
+villagerClothes 0 sht_armor 12 none none 0 0
+villagerSnowClothes 0 sht_armor 14 none none 0 0
+darklanderClothes 0 sht_armor 16 none none 0 0
+royalClothes 0 sht_armor 18 none none 0 0
+brittleManRobes 0 sht_armor 22 none none 0 0
+brittleManRags 0 sht_armor 2 none none 0 0
+brittleManArmor 0 sht_armor 0 none none 0 0
+deepManShoulder 0 sht_bigArmor 0 none none 0 0
+deepManArmor 0 sht_bigArmor 1 none none 0 0
+deepManCoat 0 sht_bigArmor 2 none none 0 0
+deepManEliteArmor 0 sht_bigArmor 3 none none 0 0
+/
+/
+*COLORLIST clst
+/ color lists
+humanColors clst_humanSkinColors clst_humanEyeColors clst_humanHairColors
+royalColors clst_royalSkinColors clst_royalEyeColors clst_royalHairColors
+halfHumanColors clst_halfHumanSkinColors clst_halfHumanEyeColors clst_halfHumanHairColors
+darklanderColors clst_darklanderSkinColors clst_darklanderSkinColors clst_darklanderHairColors
+brittleColors clst_brittleSkinColors clst_brittleEyeColors
+brittleLoyalistColors clst_brittleLoyalistSkinColors clst_brittleEyeColors
+deepColors clst_deepSkinColors clst_deepEyeColors
+deepColors2 clst_deepSkinColors2 clst_deepEyeColors
+deepColors3 clst_deepSkinColors3 clst_deepEyeColors
+deepColors4 clst_deepSkinColors4 clst_deepEyeColors
+deepColors5 clst_deepSkinColors5 clst_deepEyeColors
+fBladeColors clst_fBladeSkinColors
+rollerColors clst_rollerSkinColors clst_rollerTrimColors
+neoRollerColors clst_neoRollerSkinColors clst_neoRollerTrimColors clst_neoRollerLotusColors clst_neoRollerGlowColors1 clst_neoRollerGlowColors2 clst_neoRollerGlowColors3 clst_neoRollerGlowColors4
+wolfColors clst_wolfSkinColors clst_bigWolfGlowColors
+iceWolfColors clst_iceWolfSkinColors
+tinderColors clst_tinderSkinColors
+tinderColors2 clst_tinderSkinColors2
+leaferColors clst_leaferBarkColors clst_leaferLeafColors
+leaferColors2 clst_leaferBarkColors clst_leaferLeafColors2
+leaferColors3 clst_leaferBarkColors2 clst_leaferLeafColors3
+whelkColors clst_whelkShellColors clst_whelkMossColors clst_whelkBodyColors
+flowerColors clst_flowerStemColors clst_flowerFlowerColors
+iceFlowerColors clst_iceFlowerStemColors clst_iceFlowerFlowerColors
+purpleFlowerColors clst_purpleFlowerStemColors clst_purpleFlowerFlowerColors
+snowColors clst_snowSnowColors clst_snowArmColors
+flySkullColors clst_flySkullSkullColors
+flySkullColors2 clst_flySkullSkullColors2
+copterColors clst_copterBodyColors
+spoopColors clst_spoopLimbColor clst_spoopSkeletonColor
+arigatoColors clst_arigatoColor clst_arigatoEyeColors
+tombstoneColor clst_tombstoneColors
+foodAnimalColors clst_foodAnimalSkinColors
+foodAnimalColors2 clst_foodAnimalSkinColors2
+foodAnimalColors3 clst_foodAnimalSkinColors3
+foodCrateColors clst_foodCrateFrameColor clst_foodCrateBodyColor
+spiderColors clst_spiderSkinColors clst_spiderSkinColors
+spiderColors2 clst_spiderSkinColors2 clst_spiderSkinColors2
+spiderColors3 clst_spiderSkinColors2 clst_spiderSkinColors3
+spiderColors4 clst_spiderSkinColors4 clst_spiderSkinColors2
+chestColors1 clst_chestFrameColor1 clst_chestBodyColor
+chestColors2 clst_chestFrameColor2 clst_chestBodyColor
+chestColors3 clst_chestFrameColor3 clst_chestBodyColor
+chestColors4 clst_chestFrameColor4 clst_chestBodyColor
+/ skin color lists
+humanSkinColors clr_humanSkin1 clr_humanSkin2 clr_humanSkin3 clr_humanSkin4
+royalSkinColors clr_humanSkin2
+halfHumanSkinColors clr_humanSkin4 clr_humanSkin3 clr_humanSkin5
+darklanderSkinColors clr_darklanderSkin1 clr_darklanderSkin2 clr_darklanderSkin3
+brittleSkinColors clr_ashLeather
+brittleLoyalistSkinColors clr_loyalLeather
+spoopLimbColor clr_deepMenColor2
+spoopSkeletonColor clr_bone
+arigatoColor clr_magmaSteel
+arigatoEyeColors clr_fire clr_lightning clr_ice
+deepSkinColors clr_deepSkin
+deepSkinColors2 clr_deepSkin2
+deepSkinColors3 clr_deepSkin3
+deepSkinColors4 clr_deepSkin4
+deepSkinColors5 clr_magmaSteel
+fBladeSkinColors clr_iron
+rollerSkinColors clr_iron
+rollerTrimColors clr_deepMenColor2
+neoRollerSkinColors clr_blueSteel
+neoRollerTrimColors clr_deepMenColor2
+neoRollerLotusColors clr_deepMenColor1
+neoRollerGlowColors1 clr_white
+neoRollerGlowColors2 clr_fire
+neoRollerGlowColors3 clr_lightning
+neoRollerGlowColors4 clr_ice
+wolfSkinColors clr_wolfLeather
+tinderSkinColors clr_wood
+tinderSkinColors2 clr_wood2
+copterBodyColors clr_floraColor1
+leaferBarkColors clr_wood
+leaferBarkColors2 clr_wood2
+leaferLeafColors clr_floraColor1
+leaferLeafColors2 clr_coldGreenery
+leaferLeafColors3 clr_smoke
+whelkShellColors clr_shell
+whelkMossColors clr_floraColor1
+whelkBodyColors clr_blood
+flowerStemColors clr_caveGreenery
+flowerFlowerColors clr_flower1
+iceFlowerStemColors clr_coldGreenery
+iceFlowerFlowerColors clr_flower2
+purpleFlowerStemColors clr_templeGreenery
+purpleFlowerFlowerColors clr_flower3
+snowSnowColors clr_snow
+snowArmColors clr_wood
+iceWolfSkinColors clr_ice
+flySkullSkullColors clr_ice
+flySkullSkullColors2 clr_fire
+foodAnimalSkinColors clr_foodAnimalSkin1
+foodAnimalSkinColors2 clr_foodAnimalSkin2
+foodAnimalSkinColors3 clr_foodAnimalSkin3
+spiderSkinColors clr_wolfLeather
+spiderSkinColors2 clr_smoke
+spiderSkinColors3 clr_blood
+spiderSkinColors4 clr_gold
+chestFrameColor1 clr_iron
+chestFrameColor2 clr_blueIron
+chestFrameColor3 clr_darkMetal
+chestFrameColor4 clr_magmaSteel
+chestBodyColor clr_wood
+bigWolfGlowColors clr_blood
+foodCrateFrameColor clr_iron
+foodCrateBodyColor clr_wood2
+tombstoneColors clr_caveStoneBack clr_coldStoneBack clr_templeBack clr_burntStoneBack clr_lavaStoneBack
+/ eye color lists
+humanEyeColors clr_humanEye1 clr_humanEye2 clr_humanEye3 clr_humanEye4
+royalEyeColors clr_humanEye4
+halfHumanEyeColors clr_humanEye1 clr_humanEye1 clr_humanEye5
+brittleEyeColors clr_black clr_smoke clr_humanEye1 clr_humanEye2 clr_humanEye3 clr_humanEye4
+deepEyeColors clr_black clr_smoke clr_white
+/ hair color lists
+humanHairColors clr_humanHair3 clr_humanHair5 clr_humanHair1
+royalHairColors clr_humanHair5
+halfHumanHairColors clr_humanHair4 clr_humanHair2 clr_humanHair3
+darklanderHairColors clr_darklanderHair1 clr_darklanderHair2 clr_darklanderHair3
+/
+/
+*LIST lst
+/ varies
+/ special data lists; do not move
+specialData sht_number sht_tileLight sht_circleLight sht_item sht_letter mag_revive sht_ammoGauge sht_summonLightning
+generateRaces #rceHuman1 #rceHuman2 #rceDarklander1 #rceDarklander2 #rceHalfHuman1 #rceHalfHuman2
+generateHats none #hatNone hat_littleHat #hatLittle hat_bigHat #hatBig hat_glasses #hatGlasses
+bossEncounters true ctyp_wolfMaker ctyp_wolfMade false ctyp_neoRoller none true ctyp_wprin none false ctyp_king none
+/ part lists
+humanHairs 0 2 8
+wprinHairs 0
+halfHumanHairs 4 6
+darklanderHairs 10 11 none
+/ villager things lists
+poorHats none none none hat_villagerHat hat_villagerHat hat_bigHat
+poorMaterials mat_brownCloth mat_blueCloth
+richHats none hat_littleHat hat_littleHat hat_glasses
+richMaterials mat_blueCloth mat_whiteCloth mat_blackCloth
+guardHats none hat_villagerHat hat_villageGuardHat hat_villageGuardHat
+snowHats hat_villageGuardHat hat_villagerSnowHat hat_villagerSnowHat
+snowHatsRich hat_villagerSnowHatRich hat_villagerSnowHatRich hat_littleHat
+darklanderHats none none none none hat_brittleSoldierHat
+/ shop lists
+weaponShopForms itC_weapon wp_knife itC_weapon wp_sword itC_weapon wp_axe itC_weapon wp_bow itC_weapon wp_crossbow itC_item it_ingot
+armorShopForms itC_armor arm_plate itC_armor arm_plate itC_armor arm_plate itC_armor arm_darklanderPlate
+darklanderArmorShopForms itC_armor arm_darklanderPlate itC_armor arm_darklanderPlate itC_armor arm_darklanderPlate itC_armor arm_plate
+leatherShopForms itC_armor arm_jerkin itC_armor arm_jerkin itC_armor arm_jerkin itC_weapon wp_whip
+notLeatherShopForms itC_armor arm_mail itC_armor arm_mail itC_armor arm_mail itC_weapon wp_flail
+potionShopForms itC_item it_potion
+caveStoneTownShop lst_weaponShopForms lst_caveStoneTownShopMetals lst_weaponShopForms lst_caveStoneTownShopMetals lst_armorShopForms lst_caveStoneTownShopMetals lst_leatherShopForms lst_caveStoneTownShopLeathers lst_potionShopForms lst_caveStoneTownShopFlowers lst_potionShopForms lst_caveStoneTownShopFlowers
+caveStoneTownShopMetals mat_copper mat_iron mat_iron mat_steel mat_steel mat_ligmite mat_blueSteel
+caveStoneTownShopLeathers mat_wolfLeather mat_ashLeather
+caveStoneTownShopFlowers mat_flower1 mat_flower1 mat_flower2
+coldStoneTownShop lst_weaponShopForms lst_coldStoneTownShopMetals lst_weaponShopForms lst_coldStoneTownShopMetals lst_armorShopForms lst_coldStoneTownShopMetals lst_leatherShopForms lst_coldStoneTownShopLeathers lst_potionShopForms lst_coldStoneTownShopFlowers lst_potionShopForms lst_coldStoneTownShopFlowers
+coldStoneTownShopMetals mat_steel mat_blueIron mat_blueIron mat_blueSteel mat_blueSteel mat_astralMetal mat_astralMetal
+coldStoneTownShopLeathers mat_ashLeather mat_iceLeather mat_iceLeather
+coldStoneTownShopFlowers mat_flower1 mat_flower2 mat_flower2 mat_flower3
+templeTownShop lst_weaponShopForms lst_templeTownShopMetals lst_weaponShopForms lst_templeTownShopMetals lst_darklanderArmorShopForms lst_templeTownShopMetals lst_leatherShopForms lst_templeTownShopLeathers lst_potionShopForms lst_templeTownShopFlowers lst_potionShopForms lst_templeTownShopFlowers
+templeTownShopMetals mat_astralMetal mat_darkMetal mat_darkMetal mat_smokeStone mat_glazedDarkmetal
+templeTownShopLeathers mat_loyalLeather mat_floraHide
+templeTownShopFlowers mat_flower2 mat_flower3 mat_flower3
+lavaTownShop lst_weaponShopForms lst_lavaTownShopMetals lst_weaponShopForms lst_lavaTownShopMetals lst_darklanderArmorShopForms lst_lavaTownShopMetals lst_notLeatherShopForms lst_lavaTownShopMetals lst_potionShopForms lst_lavaTownShopFlowers lst_potionShopForms lst_lavaTownShopFlowers
+lavaTownShopMetals mat_magmaSteel mat_magmaSteel mat_energizedLigmite mat_adamant
+lavaTownShopFlowers mat_flower4 mat_flower4 mat_flower3
+/ map mod lists
+spiderList ctyp_spider ctyp_spider2 ctyp_spider3 ctyp_spider4
+chestList ctyp_chest ctyp_chest2 ctyp_chest3 ctyp_chest4
+genericTrapList trp_spikes trp_bombs trp_darts trp_fireballs
+/ map data lists
+caveStoneDataList encd_caveStoneStart encd_caveStone2 encd_caveStone3
+coldStoneDataList encd_coldStoneStart encd_coldStone2 encd_coldStone3
+templeDataList encd_templeStart encd_temple2 encd_temple3
+lavaDataList encd_lavaStart encd_lava2 encd_lava3
+/ decoration lists
+caveStoneDecorations decor_forge decor_torch
+coldStoneDecorations decor_blueForge decor_brazier decor_brazier decor_cratePile
+templeDecorations decor_darkForge decor_lamp decor_lamp decor_lamp decor_lamp decor_templeShop decor_templeHouse
+lavaDecorations decor_magmaForge decor_lavaLamp decor_collumn
+/ trap lists
+caveStoneTraps trp_spikes
+coldStoneTraps trp_spikes trp_bombs
+templeTraps trp_spikes trp_darts trp_bombs
+lavaTraps trp_spikes trp_darts trp_bombs trp_fireballs trp_fireballs
+/ encounter-related lists
+caveStoneBossLow ctyp_brittleVeteranSoldier ctyp_deepManBrute
+caveStoneBossLowB ctyp_tinderMan
+caveStoneBossMedium ctyp_ramRoller ctyp_deepManSoldier
+caveStoneBossMediumB ctyp_whelk ctyp_tinderManRanger
+caveStoneBossHigh ctyp_ramRoller
+caveStoneBossHighB ctyp_whelk
+coldStoneBossLow ctyp_cannonRoller
+coldStoneBossLowB ctyp_whelk2
+coldStoneBossMedium ctyp_cannonRoller
+coldStoneBossMediumB ctyp_whelk2
+coldStoneBossHigh ctyp_cannonRoller
+coldStoneBossHighB ctyp_whelk2
+templeBossLow ctyp_turboRoller
+templeBossLowB ctyp_whelk3
+templeBossMedium ctyp_turboRoller
+templeBossMediumB ctyp_whelk3
+templeBossHigh ctyp_turboRoller
+templeBossHighB ctyp_whelk3
+lavaBossLow ctyp_luxRoller
+lavaBossMedium ctyp_luxRoller
+lavaBossHigh ctyp_luxRoller
+caveStoneEnemyLow ctyp_brittleSoldier ctyp_brittleSoldier ctyp_deepManBrute
+caveStoneEnemyLowB ctyp_leafer ctyp_leafer ctyp_wolf ctyp_wolf ctyp_flower
+caveStoneEnemyMedium ctyp_brittleSoldier ctyp_brittleSoldier ctyp_brittleVeteranSoldier ctyp_deepManBrute ctyp_deepManBrute ctyp_deepManBrute ctyp_flyingBlade
+caveStoneEnemyMediumB ctyp_tinderMan ctyp_tinderMan ctyp_leafer ctyp_leafer ctyp_leafer ctyp_wolf ctyp_flower ctyp_flower
+caveStoneEnemyHigh ctyp_brittleVeteranSoldier ctyp_brittleVeteranSoldier ctyp_deepManSoldier ctyp_deepManSoldier ctyp_deepManBrute ctyp_flyingBlade
+caveStoneEnemyHighB ctyp_tinderManRanger ctyp_tinderManRanger ctyp_tinderMan ctyp_leafer ctyp_leafer ctyp_flower
+coldStoneEnemyLow ctyp_deepManBlue ctyp_snowman ctyp_snowman
+coldStoneEnemyLowB ctyp_iceWolf ctyp_iceFlower ctyp_iceFlower ctyp_blueLeafer ctyp_blueLeafer
+coldStoneEnemyMedium ctyp_deepManBlue ctyp_snowman ctyp_deepManBlue ctyp_snowman ctyp_iceSkull
+coldStoneEnemyMediumB ctyp_iceWolf ctyp_iceFlower ctyp_superiorIceWolf ctyp_blueLeafer ctyp_blueLeafer
+coldStoneEnemyHigh ctyp_deepManBlue ctyp_deepManBlue ctyp_snowman ctyp_iceSkull
+coldStoneEnemyHighB ctyp_superiorIceWolf ctyp_superiorIceWolf ctyp_blueLeafer ctyp_blueLeafer
+templeEnemyLow ctyp_brittleLoyalist ctyp_brittleLoyalist ctyp_deepManGuard
+templeEnemyLowB ctyp_purpleFlower ctyp_tinderManSlayer ctyp_blackLeafer
+templeEnemyMedium ctyp_brittleLoyalist ctyp_brittleLoyalist ctyp_deepManGuard ctyp_deepManGuardArcher ctyp_brittleAssassin
+templeEnemyMediumB ctyp_purpleFlower ctyp_tinderManSlayer ctyp_blackLeafer ctyp_copter
+templeEnemyHigh ctyp_brittleLoyalist ctyp_deepManGuard ctyp_deepManGuardArcher ctyp_cannonRoller ctyp_brittleAssassin
+templeEnemyHighB ctyp_purpleFlower ctyp_whelk2 ctyp_tinderManSlayer ctyp_blackLeafer ctyp_copter
+lavaEnemyLow ctyp_spoop ctyp_arigato ctyp_deepManElite
+lavaEnemyMedium ctyp_spoop ctyp_arigato ctyp_deepManElite ctyp_fireSkull ctyp_brittleAcolyte
+lavaEnemyHigh ctyp_brittleAcolyte ctyp_fireSkull ctyp_brittleAcolyte ctyp_fireSkull ctyp_spoop ctyp_arigato ctyp_deepManElite
+/ starting player inventories
+humanInv1 itC_item it_bread mat_bread itC_item it_potion mat_flower1
+humanInv2 itC_item it_potion mat_flower2 itC_item it_potion mat_flower1
+darklanderInv1 itC_item it_tanningSolution mat_noMaterial itC_item it_potion mat_flower1
+darklanderInv2 itC_item it_ingot mat_iron itC_item it_potion mat_flower1
+halfhumanInv1 itC_item it_hide mat_wolfLeather itC_item it_potion mat_flower1
+halfhumanInv2 itC_item it_poison mat_noMaterial itC_item it_potion mat_flower1
+/ drop lists (type item material)
+chestDrops itC_armor arm_darklanderPlate mat_iron itC_armor arm_jerkin mat_wolfLeather itC_item it_potion mat_flower1
+chestDrops2 itC_armor arm_darklanderPlate mat_blueIron itC_armor arm_jerkin mat_iceLeather itC_item it_potion mat_flower2
+chestDrops3 itC_armor arm_darklanderPlate mat_darkMetal itC_armor arm_jerkin mat_loyalLeather itC_item it_potion mat_flower3
+chestDrops4 itC_armor arm_darklanderPlate mat_magmaSteel itC_armor arm_mail mat_magmaSteel itC_item it_potion mat_flower4
+bigWolfDrops itC_item it_wolfPearl mat_blood
+bigWolfDropsRare itC_item it_wolfPearl mat_blood
+neoRollerDrops itC_magicItem mgit_diode mat_noMaterial
+neoRollerDropsRare itC_magicItem mgit_diode mat_noMaterial
+wprinDrops itC_weapon wp_wprinStaff mat_wprinStaffMaterial
+wprinDropsRare itC_weapon wp_wprinStaff mat_wprinStaffMaterial
+foodAnimalDrops itC_item it_steak mat_foodAnimalFlesh1
+foodAnimalDrops2 itC_item it_steak2 mat_foodAnimalFlesh2
+foodAnimalDrops3 itC_item it_steak3 mat_foodAnimalFlesh3
+foodAnimalDrops3Rare itC_item it_steak3 mat_foodAnimalFlesh3
+foodCrateDrops itC_item it_bread2 mat_bread2
+spiderDrops itC_item it_spiderFang mat_noMaterial
+spiderDropsRare itC_item it_spiderFang mat_noMaterial
+spoopDrops itC_item it_bone mat_noMaterial
+spoopDropsRare itC_weapon wp_bow mat_magmaSteel itC_weapon wp_sword mat_magmaSteel
+arigatoDrops itC_item it_wire mat_noMaterial
+arigatoDropsRare itC_item it_wire mat_noMaterial
+rollerDrops itC_item it_ingot mat_steel
+rollerDropsRare itC_magicItem mgit_fireInterpreter mat_noMaterial itC_magicItem mgit_arrowInterpreter mat_noMaterial
+roller2Drops itC_item it_ingot mat_darkMetal
+roller2DropsRare itC_magicItem mgit_iceInterpreter mat_noMaterial itC_magicItem mgit_invisibilityInterpreter mat_noMaterial
+roller3Drops itC_item it_ingot mat_glazedDarkmetal
+roller3DropsRare itC_magicItem mgit_lightningInterpreter mat_noMaterial itC_magicItem mgit_arrowInterpreter mat_noMaterial
+roller4Drops itC_item it_ingot mat_adamant
+roller4DropsRare itC_magicItem mgit_fireInterpreter mat_noMaterial itC_magicItem mgit_lightningInterpreter mat_noMaterial itC_magicItem mgit_iceInterpreter mat_noMaterial
+whelkDrops itC_item it_ingot mat_steel
+whelkDropsRare itC_magicItem mgit_fireInterpreter mat_noMaterial itC_magicItem mgit_mendingInterpreter mat_noMaterial
+whelk2Drops itC_item it_ingot mat_darkMetal
+whelk2DropsRare itC_magicItem mgit_iceInterpreter mat_noMaterial itC_magicItem mgit_mendingInterpreter mat_noMaterial
+whelk3Drops itC_item it_ingot mat_glazedDarkmetal
+whelk3DropsRare itC_magicItem mgit_lightningInterpreter mat_noMaterial itC_magicItem mgit_mendingInterpreter mat_noMaterial
+flowerDrops itC_item it_flower mat_flower1
+flowerDropsRare itC_item it_flower mat_flower1
+iceFlowerDrops itC_item it_flower mat_flower2
+iceFlowerDropsRare itC_item it_flower mat_flower2
+copterDrops itC_item it_hide mat_floraHide
+copterDropsRare itC_armor arm_jerkin mat_floraHide itC_item it_potion mat_flower3 itC_item it_potion mat_flower3
+purpleFlowerDrops itC_item it_flower mat_flower3
+purpleFlowerDropsRare itC_item it_flower mat_flower3
+tinderDrops itC_item it_log mat_noMaterial
+tinderDropsRare itC_weapon wp_sword mat_iron itC_weapon wp_knife mat_ligmite itC_item it_potion mat_flower1
+tinderRangerDrops itC_item it_log mat_noMaterial
+tinderRangerDropsRare itC_weapon wp_bow mat_steel itC_item it_potion mat_flower1 itC_item it_potion mat_flower1 itC_item it_fourAmmo mat_noMaterial
+tinderSlayerDrops itC_item it_log mat_noMaterial
+tinderSlayerDropsRare itC_weapon wp_axe mat_darkMetal itC_item it_potion mat_flower3
+wolfDrops itC_item it_hide mat_wolfLeather
+wolfDropsRare itC_item it_hide mat_wolfLeather
+iceWolfDrops itC_item it_hide mat_iceLeather
+iceWolfDropsRare itC_item it_hide mat_iceLeather
+brittleDrops itC_item it_hide mat_ashLeather
+brittleDropsRare itC_weapon wp_knife mat_iron itC_item it_potion mat_flower1 itC_item it_potion mat_flower1 itC_item it_ingot mat_iron
+brittleVeteranDrops itC_item it_hide mat_ashLeather
+brittleVeteranDropsRare itC_weapon wp_sword mat_steel itC_weapon wp_bow mat_steel itC_item it_potion mat_flower1 itC_item it_potion mat_flower1 itC_item it_fourAmmo mat_noMaterial itC_item it_ingot mat_steel
+brittleLoyalistDrops itC_item it_hide mat_loyalLeather
+brittleLoyalistDropsRare itC_weapon wp_sword mat_darkMetal itC_item it_potion mat_flower3 itC_item it_ingot mat_darkMetal itC_item it_potion mat_flower3 itC_item it_ingot mat_darkMetal itC_magicItem mgit_mendingInterpreter mat_noMaterial
+brittleAssassinDrops itC_item it_ore mat_smokeStone
+brittleAssassinDropsRare itC_item it_ingot mat_smokeStone itC_weapon wp_knife mat_smokeStone itC_item it_poison mat_noMaterial itC_item it_potion mat_flower3 itC_magicItem mgit_invisibilityInterpreter mat_noMaterial
+brittleAcolyteDrops itC_item it_extract mat_flower4
+brittleAcolyteDropsRare itC_item it_potion mat_flower4 itC_magicItem mgit_fireInterpreter mat_noMaterial itC_weapon wp_knife mat_adamant
+deepDrops itC_item it_ore mat_iron
+deepDropsRare itC_weapon wp_axe mat_iron itC_item it_potion mat_flower1 itC_item it_ingot mat_iron itC_item it_ingot mat_iron
+deepSoldierDrops itC_item it_ore mat_ligmite
+deepSoldierDropsRare itC_weapon wp_axe mat_steel itC_item it_potion mat_flower1 itC_item it_ingot mat_steel itC_item it_ingot mat_steel
+deepBlueDrops itC_item it_ore mat_blueIron
+deepBlueDropsRare itC_weapon wp_axe mat_blueIron itC_item it_potion mat_flower2 itC_item it_ingot mat_blueIron itC_item it_ingot mat_blueIron
+deepGuardDrops itC_item it_ore mat_darkMetal
+deepGuardDropsRare itC_weapon wp_sword mat_darkMetal itC_item it_potion mat_flower3 itC_item it_ingot mat_darkMetal itC_item it_ingot mat_darkMetal
+deepGuardArcherDrops itC_item it_ore mat_darkMetal
+deepGuardArcherDropsRare itC_weapon wp_crossbow mat_darkMetal itC_weapon wp_sword mat_darkMetal itC_item it_potion mat_flower3 itC_item it_ingot mat_darkMetal itC_item it_ingot mat_darkMetal
+deepEliteDrops itC_item it_ore mat_magmaSteel
+deepEliteDropsRare itC_item it_ingot mat_magmaSteel itC_weapon wp_sword mat_magmaSteel itC_item it_potion mat_flower4
+flyingBladeDrops itC_item it_ore mat_iron itC_item it_ore mat_ligmite
+flyingBladeDropsRare itC_weapon wp_knife mat_iron itC_item it_ore mat_ligmite
+leaferDrops itC_item it_deadLeaf mat_noMaterial itC_item it_log mat_noMaterial
+leaferDropsRare itC_item it_deadLeaf mat_noMaterial
+iceSkullDrops itC_item it_ore mat_astralMetal
+iceSkullDropsRare itC_item it_ore mat_astralMetal
+fireSkullDrops itC_item it_ore mat_energizedLigmite
+fireSkullDropsRare itC_item it_ore mat_energizedLigmite
+snowmanDrops itC_item it_log mat_noMaterial itC_item it_ore mat_blueIron itC_item it_flower mat_flower2
+snowmanDropsRare itC_item it_ingot mat_blueIron itC_armor arm_plate mat_blueIron itC_weapon wp_sword mat_iceLeather
+/ crafting lists
+componentMetal1 mat_iron mat_iron mat_ligmite mat_blueIron mat_blueIron mat_blueIron mat_darkMetal mat_smokeStone mat_darkMetal mat_magmaSteel mat_energizedLigmite mat_energizedLigmite
+componentMetal2 mat_iron mat_ligmite mat_ligmite mat_blueIron mat_ligmite mat_astralMetal mat_darkMetal mat_smokeStone mat_smokeStone mat_magmaSteel mat_energizedLigmite mat_magmaSteel
+resultMetal mat_iron mat_steel mat_ligmite mat_blueIron mat_blueSteel mat_astralMetal mat_darkMetal mat_smokeStone mat_glazedDarkmetal mat_magmaSteel mat_energizedLigmite mat_adamant
+componentLeather mat_wolfLeather mat_ashLeather mat_iceLeather mat_loyalLeather mat_floraHide
+componentFlower mat_flower1 mat_flower2 mat_flower3 mat_flower4
+/ race lists
+zero 0
+humanEyes 1
+humanPupils 2
+fBladeHead 3
+rollerTrim 1
+wolfBgLegs 8
+wolfFgLegs 12
+wolfTail 4
+wolfBody 16
+tinderBody 2
+leaferTrunk 21
+leaferLeaves 22
+whelkShell 14
+whelkMoss 15
+whelkBody 16
+flowerStem 9
+flowerFlower 10
+snowBody 4
+snowArms 11
+snowHead 3
+bigSkull 9
+halfHumanTail 4
+foodAnimalBody 23
+foodAnimalHead 45
+spiderBackLegs 29
+spiderFrontLegs 25
+spiderBody 33
+spiderHead 37
+chestFrame 41
+chestBody 42
+barrelFrame 43
+barrelBody 44
+bigWolfTail 20
+bigWolfBgLegs 24
+bigWolfFgLegs 28
+bigWolfHead 32
+bigWolfBody 35
+bigWolfGlow 2
+neoRollerBody 0
+neoRollerTrim 1
+neoRollerLotus 5
+luxRollerCannon 6
+flyPlantBody 12
+skeletonBody 5
+skeletonHead 4
+robotBody 6
+robotHead 5
+robotEyes 6
+tombstones 12 13
+richTombstones 14 15
+/
+/
+*COLOR clr
+/ red green blue alpha
+black 0 0 0 255
+white 255 255 255 255
+/ material colors
+bread 190 130 70 255
+bread2 180 160 60 255
+wood 125 60 5 255
+wood2 125 80 15 255
+copper 184 115 51 255
+scrap 140 135 150 255
+iron 150 150 150 255
+blueIron 150 150 200 255
+wolfLeather 114 76 63 255
+steel 170 170 185 255
+blueSteel 165 165 195 255
+ligmite 70 50 20 255
+energizedLigmite 100 80 50 255
+darkMetal 75 90 75 255
+glazedDarkmetal 65 90 55 255
+ashLeather 220 220 220 255
+magmaSteel 155 120 125 255
+adamant 200 95 0 255
+flower1 205 205 55 255
+flower2 210 210 255 200
+flower3 180 100 180 235
+flower4 240 160 160 255
+ice 75 155 215 160
+astralMetal 210 190 255 240
+loyalLeather 230 230 170 255
+blueCloth 100 100 200 255
+greenCloth 95 200 90 255
+brownCloth 180 110 50 255
+whiteCloth 210 210 200 255
+blackCloth 60 60 50 255
+gold 255 215 0 255
+bone 240 240 210 255
+/ body colors
+humanSkin1 255 230 212 255
+humanSkin2 255 211 188 255
+humanSkin3 210 156 122 255
+humanSkin4 171 122 92 255
+humanSkin5 255 245 239 255
+foodAnimalSkin1 230 140 140 255
+foodAnimalSkin2 190 190 230 255
+foodAnimalSkin3 190 120 120 255
+darklanderSkin1 136 100 150 240
+darklanderSkin2 114 73 106 240
+darklanderSkin3 135 120 150 235
+deepSkin 91 89 88 255
+deepSkin2 101 89 88 255
+deepSkin3 91 89 130 255
+deepSkin4 81 109 78 255
+humanEye1 125 125 255 255
+humanEye2 255 125 125 255
+humanEye3 125 255 125 255
+humanEye4 105 75 55 255
+humanEye5 240 30 30 255
+humanHair1 29 30 43 255
+humanHair2 202 66 68 255
+humanHair3 151 98 81 255
+humanHair4 221 199 176 255
+humanHair5 203 198 169 255
+darklanderHair1 220 160 220 255
+darklanderHair2 170 130 200 255
+darklanderHair3 195 145 185 255
+shell 133 125 106 255
+/ particle colors
+blood 106 35 33 255
+blueBlood 35 33 106 255
+fire 255 100 0 255
+lightning 255 255 30 235
+smoke 70 70 70 255
+deathSmoke 85 70 70 255
+poison 60 255 80 230
+/ faction colors
+deepMenColor1 150 75 0 255
+deepMenColor2 220 180 120 255
+floraColor1 120 220 100 255
+floraColor2 30 80 115 255
+/ tile colors
+caveStone 180 150 150 255
+caveStoneBack 135 112 112 255
+caveStoneBacker 115 92 92 255
+caveGreenery 120 220 130 255
+snow 235 235 240 255
+coldStone 155 155 185 255
+coldStoneBack 110 110 130 255
+coldStoneBacker 90 90 110 255
+coldGreenery 120 130 220 255
+temple 190 190 150 255
+templeBack 180 180 140 255
+templeBacker 170 170 130 255
+templeBurnedBack 160 160 150 255
+templeGreenery 120 175 125 255
+burntStone 100 90 85 255
+burntStoneBack 90 80 75 255
+burntStoneBacker 70 60 55 255
+lavaStoneBack 95 70 65 255
+/ light colors
+caveTileLightA 85 85 100 255
+caveTileLightB 85 100 100 255
+coldTileLightA 95 95 115 255
+coldTileLightB 95 105 115 255
+templeTileLightA 85 85 110 255
+templeTileLightB 85 110 110 255
+lavaLightA 75 55 60 255
+goldGlow 255 215 0 60
+greenGlow 100 255 100 100
+/ projectile colors
+projectile 145 145 145 255
+soulArrow 190 190 240 140
+soulArrowSolid 190 190 240 255
+/ perk colors
+perkActive 200 188 188 255
+perkPassive 188 200 188 255
+/
+/
+*MATERIAL mat
+/ bonus color speedMod magic name costMod selfEffect
+noMaterial 0 clr_white 100 none none 0 none
+/ food materials
+bread 0 clr_bread 100 none none 0 none
+bread2 0 clr_bread2 100 none none 0 none
+foodAnimalFlesh1 0 clr_foodAnimalSkin1 100 none none 0 none
+foodAnimalFlesh2 0 clr_foodAnimalSkin2 100 none none 0 none
+foodAnimalFlesh3 0 clr_foodAnimalSkin3 100 none none 0 none
+/ potion materials
+flower1 5 clr_flower1 100 none #matFlower1 0 none
+flower2 8 clr_flower2 100 none #matFlower2 20 none
+flower3 10 clr_flower3 100 none #matFlower3 60 none
+flower4 15 clr_flower4 100 none #matFlower4 120 none
+/ player materials should be carefully notated
+/ to ensure they show up at the appropriate levels, given their tiers
+/ t0 materials (cannot be made)
+copper 0 clr_copper 95 none #matCopper -30 none
+scrapLeather 0 clr_scrap 110 none #matScrapLeather -30 none
+/ t1 materials
+/ iron is made from 2x iron ore (deep men)
+iron 1 clr_iron 100 none #matIron 50 none
+/ wolf leather is made from 1x wolf hide (wolves), 1x tanning solution (leafers)
+wolfLeather 1 clr_wolfLeather 120 none #matWolfLeather 50 none
+/ t2 materials
+/ steel is made from 1x iron ore (deep men), 1x lignite ore (advanced deep men)
+steel 3 clr_steel 100 none #matSteel 100 none
+/ ligmite is made from 2x ligmite ore (advanced deep men)
+ligmite 1 clr_ligmite 90 mag_ligmiteFlare #matLigmite 110 none
+/ ash leather is made from 1x ash hide (brittle men), 1x tanning solution (leafers)
+ashLeather 3 clr_ashLeather 120 none #matAshLeather 100 none
+/ t3 materials
+/ blue iron is made from 2x blue iron ore (cold deep men)
+blueIron 5 clr_blueIron 100 none #matBlueIron 150 none
+/ blue steel is made from 1x blue iron ore (cold deep men), 1x ligmite ore (advanced deep men)
+blueSteel 4 clr_blueSteel 120 none #matBlueSteel 140 none
+/ ice leather is made from 1x ice hide (ice wolf), 1x tanning solution (leafers)
+iceLeather 5 clr_ice 120 mag_snowBurst #matIceLeather 150 none
+/ t4 materials
+/ astral metal is made from 1x astral metal ore (ice skulls), 1x blue iron ore (cold deep men)
+astralMetal 7 clr_astralMetal 100 none #matAstralMetal 200 none
+/ there is no t4 leather; the t3 is pretty good already
+/ t5 materials
+/ darkmetal is made from 2x darkmetal ore (deep men city guards)
+darkMetal 9 clr_darkMetal 100 none #matDarkMetal 250 none
+/ loyal leather is made from 1x loyal hide (brittle men loyalists), 1x tanning solution (leafers)
+loyalLeather 9 clr_loyalLeather 120 none #matLoyalLeather 250 none
+/ t6 materials
+/ smokestone is made from 2x smokestone (assassins)
+smokeStone none clr_smoke 90 none #matSmokeStone 310 none
+/ glazed darkmetal is made from 1x darkmetal (deep men city guards), 1x smokestone (assassins)
+glazedDarkmetal 11 clr_glazedDarkmetal 100 none #matGlazedDarkmetal 300 none
+/ flora hide is made from 1x flora hide (copters), 1x tanning solution (leafers)
+floraHide 10 clr_floraColor1 130 none #matFloraHide 290 none
+/ t7 materials
+/ magmasteel is made from oh who cares anymore
+magmaSteel 13 clr_magmaSteel 100 none #matMagmaSteel 350 none
+/ t8 materials
+/ energized ligmite
+energizedLigmite 13 clr_energizedLigmite 90 mag_ligmiteFlare #matEnergizedLigmite 400 none
+/ adamant
+adamant 15 clr_adamant 100 none #matAdamant 410 none
+/ faction color materials
+deepMenColor1 0 clr_deepMenColor1 100 none none 0 none
+deepMenColor2 0 clr_deepMenColor2 100 none none 0 none
+floraColor1 0 clr_floraColor1 100 none none 0 none
+floraColor2 0 clr_floraColor2 100 none none 0 none
+darkScrap 0 clr_smoke 100 none none 0 none
+blueCloth 0 clr_blueCloth 100 none none 15 none
+greenCloth 0 clr_greenCloth 100 none none 30 none
+brownCloth 0 clr_brownCloth 100 none none 0 none
+blackCloth 0 clr_blackCloth 100 none none 15 none
+whiteCloth 0 clr_whiteCloth 100 none none 30 none
+blood 0 clr_blood 100 none none 0 none
+/ monster effect materials
+whelkSlamMaterial 0 clr_floraColor2 100 mag_whelkSlam none 0 none
+whelkSlamMaterial2 0 clr_floraColor2 100 mag_whelkSlam2 none 0 none
+whelkSlamMaterial3 0 clr_floraColor2 100 mag_whelkSlam3 none 0 none
+whelkFireballMaterial 0 clr_floraColor2 100 mag_whelkFireball none 0 none
+whelkIceballMaterial 0 clr_floraColor2 100 mag_whelkIceball none 0 none
+whelkLightningballMaterial 0 clr_floraColor2 100 mag_whelkLightningball none 0 none
+snowmanIce 0 clr_ice 100 mag_snowBurst none 0 none
+fireSkullFire 0 clr_fire 100 mag_ligmiteFlare none 0 none
+spiderVenom 0 clr_smoke 100 mag_poisonBasic none 0 none
+wprinStaffMaterial 12 clr_floraColor1 100 none none 0 mag_wprinStaff
+wprinStaffMaterialBoss 0 clr_floraColor1 100 none none 0 mag_wprinStaffBoss
+bone 0 clr_bone 100 none none 0 none
+/
+/
+*PROJECTILE prj
+/ speed sheet frame color lightColor particle curlStart curlRate
+arrow 500 sht_projectile 0 clr_iron clr_projectile none 0 0
+soulArrow 500 sht_projectile 5 clr_soulArrow clr_soulArrow ptc_soulArrowSparkle 0 0
+bigArrow 600 sht_bigWeapon 11 clr_iron clr_projectile none 0 0
+dart 450 sht_projectile 6 clr_iron clr_projectile none 0 0
+cannonBall 400 sht_projectile 1 clr_iron clr_projectile none 0 0
+snowball 400 sht_projectile 1 clr_snow clr_snow ptc_snow 1 15
+leaf 450 sht_projectile 2 clr_floraColor1 clr_projectile none 0 0
+blueLeaf 450 sht_projectile 2 clr_coldGreenery clr_projectile none 0 0
+blackLeaf 450 sht_projectile 2 clr_smoke clr_projectile none 0 0
+firebolt 600 sht_projectile 3 clr_fire clr_fire ptc_flame 0 0
+lightbolt 800 sht_projectile 3 clr_goldGlow clr_goldGlow none 0 0
+fireball 530 sht_projectile 4 clr_fire clr_fire ptc_flame 0 0
+fireballSpecial 400 sht_projectile 4 clr_fire clr_fire ptc_flame 0 0
+iceball 530 sht_projectile 4 clr_ice clr_ice ptc_snow 0 0
+lightningball 700 sht_projectile 4 clr_lightning clr_lightning ptc_spark 0 0
+stemPower 350 sht_projectile 4 clr_floraColor1 clr_floraColor1 none 22 80
+icePower 320 sht_projectile 4 clr_ice clr_ice none 22 80
+purplePower 500 sht_projectile 4 clr_flower3 clr_flower3 none 12 80
+iceBolt 400 sht_projectile 4 clr_ice clr_ice ptc_snow 0 0
+snowShot 500 sht_particle 5 clr_snow none ptc_snow 0 0
+sparkBolt 500 sht_projectile 4 clr_lightning clr_lightning none 0 0
+bloodWave 250 sht_projectile 7 clr_blood clr_projectile ptc_blood 0 0
+bloodWaveFast 600 sht_projectile 7 clr_blood clr_projectile ptc_blood 0 0
+copterShot 500 sht_projectile 8 clr_floraColor1 clr_projectile none 0 0
+poisonDrop 330 sht_projectile 9 clr_floraColor1 clr_floraColor2 none 0 0
+blueMoon 400 sht_projectile 10 clr_floraColor2 clr_floraColor1 none 0 0
+/
+/
+*CTYPE ctyp
+/ race colorList maxHealth baseAttack baseDefense moveSpeed weapon weaponMaterial weapon2 weaponMaterial2 armor armorMaterial hat AI dropList level glowColor
+playerHuman1 rce_human clst_humanColors 15 0 0 300 wp_sword mat_copper none none arm_jerkin mat_scrapLeather none ai_noAI lst_humanInv1 1 clr_white
+playerHuman2 rce_human clst_humanColors 13 0 1 300 wp_sword mat_copper none none arm_plate mat_copper none ai_noAI lst_humanInv2 1 clr_white
+playerDarklander1 rce_darklander clst_darklanderColors 17 0 0 300 wp_whip mat_scrapLeather none none arm_poncho mat_scrapLeather none ai_noAI lst_darklanderInv1 1 clr_white
+playerDarklander2 rce_darklander clst_darklanderColors 17 0 0 300 wp_axe mat_copper none none arm_darklanderPlate mat_copper none ai_noAI lst_darklanderInv2 1 clr_white
+playerHalfHuman1 rce_halfHuman clst_halfHumanColors 13 0 0 325 wp_bow mat_copper wp_knife mat_copper arm_rags mat_scrapLeather none ai_noAI lst_halfhumanInv1 1 clr_white
+playerHalfHuman2 rce_halfHuman clst_halfHumanColors 13 1 0 300 wp_knife mat_copper none none arm_jerkin mat_darkScrap none ai_noAI lst_halfhumanInv2 1 clr_white
+/ npcs
+npcHumanVillager rce_human clst_humanColors 10 0 0 80 none none none none arm_villagerClothes mat_noMaterial none ai_t1Villager none 1 none
+npcHumanVendor rce_human clst_humanColors 10 0 0 80 none none none none arm_villagerClothes mat_noMaterial none ai_t1Vendor none 1 none
+npcHumanGuard rce_human clst_humanColors 10 0 0 80 wp_axe mat_iron none none arm_plate mat_iron none ai_t1Guard none 1 none
+npcSnowVillager rce_human clst_humanColors 10 0 0 80 wp_pick mat_iron none none arm_villagerSnowClothes mat_wolfLeather none ai_t2Villager none 1 none
+npcSnowVendor rce_human clst_humanColors 10 0 0 80 none none none none arm_villagerSnowClothes mat_ashLeather none ai_t2Vendor none 1 none
+npcSnowGuard rce_human clst_humanColors 10 0 0 80 wp_sword mat_ligmite none none arm_plate mat_blueIron none ai_t2Guard none 1 none
+npcTempleVillager rce_darklander clst_darklanderColors 10 0 0 80 none none none none arm_darklanderClothes none none ai_t3Villager none 1 none
+npcTempleVendor rce_darklander clst_darklanderColors 10 0 0 80 none none none none arm_darklanderClothes none none ai_t3Vendor none 1 none
+npcTempleGuard rce_deepMan clst_deepColors4 10 0 0 70 wp_monsterGreatsword mat_deepMenColor2 none none arm_deepManArmor mat_deepMenColor2 hat_deepManFullHelm ai_t3Guard none 1 none
+npcLavaVillager rce_tombstone clst_tombstoneColor 10 0 0 1 none none none none arm_noArmor mat_noMaterial none ai_t4Villager none 1 clr_projectile
+npcLavaVendor rce_richTombstone clst_tombstoneColor 10 0 0 1 none none none none arm_noArmor mat_noMaterial none ai_t4Vendor none 1 clr_goldGlow
+/ level-zero creatures
+/ note that they are all level 0, and thus have no rare drops and drop no experience
+/ except the food animal 3 because fuck consistency
+foodAnimal rce_foodAnimal clst_foodAnimalColors 6 0 3 100 wp_monsterWhelkSlam mat_noMaterial none none arm_noArmor mat_noMaterial none ai_animal lst_foodAnimalDrops 0 none
+foodAnimal2 rce_foodAnimal clst_foodAnimalColors2 6 0 5 100 wp_monsterWhelkSlam mat_noMaterial none none arm_noArmor mat_noMaterial none ai_animal lst_foodAnimalDrops2 0 none
+foodCrate rce_barrel clst_foodCrateColors 4 0 99 0 none none none none arm_noArmor mat_noMaterial none ai_chest lst_foodCrateDrops 0 clr_iron
+foodAnimal3 rce_foodAnimal clst_foodAnimalColors3 8 0 0 200 wp_monsterTusks mat_bone none none arm_noArmor mat_noMaterial none ai_basic lst_foodAnimalDrops3 24 none
+chest rce_chest clst_chestColors1 4 0 99 0 none none none none arm_noArmor mat_noMaterial none ai_chest lst_chestDrops 0 clr_iron
+chest2 rce_chest clst_chestColors2 4 0 99 0 none none none none arm_noArmor mat_noMaterial none ai_chest lst_chestDrops2 0 clr_blueIron
+chest3 rce_chest clst_chestColors3 4 0 99 0 none none none none arm_noArmor mat_noMaterial none ai_chest lst_chestDrops3 0 clr_darkMetal
+chest4 rce_chest clst_chestColors4 4 0 99 0 none none none none arm_noArmor mat_noMaterial none ai_chest lst_chestDrops4 0 clr_magmaSteel
+/ monster types
+/ take careful note of their total attack and defense; put it in comments I guess
+/ brittle man soldier (1)
+brittleSoldier rce_brittleMan clst_brittleColors 12 0 -1 220 wp_monsterKnife mat_deepMenColor2 none none arm_brittleManRags mat_deepMenColor1 hat_brittleSoldierHat ai_basic lst_brittleDrops 1 none
+/ brittle man veteran soldier (4)
+brittleVeteranSoldier rce_brittleMan clst_brittleColors 14 0 -1 230 wp_monsterSword mat_deepMenColor2 wp_monsterBow mat_deepMenColor1 arm_brittleManArmor mat_deepMenColor2 hat_brittleSoldierHat ai_basicArcher lst_brittleVeteranDrops 4 none
+/ brittle man loyalist (17)
+brittleLoyalist rce_brittleMan clst_brittleLoyalistColors 14 0 -1 230 wp_monsterSword mat_deepMenColor2 none none arm_brittleManArmor mat_deepMenColor2 hat_brittleLoyalistHat ai_retreat lst_brittleLoyalistDrops 17 none
+/ brittle man assassin (20)
+brittleAssassin rce_brittleMan clst_brittleLoyalistColors 9 0 -1 260 wp_monsterKnife mat_smokeStone none none arm_jerkin mat_darkScrap hat_brittleLoyalistHat ai_teleport lst_brittleAssassinDrops 20 none
+/ brittle man acolyte (28)
+brittleAcolyte rce_brittleMan clst_brittleLoyalistColors 14 0 -1 230 wp_monsterKnife mat_deepMenColor2 none none arm_brittleManRobes mat_deepMenColor1 hat_brittleAcolyteHood ai_retreatFire lst_brittleAcolyteDrops 28 clr_fire
+/ deep man brute (2)
+deepManBrute rce_deepMan clst_deepColors 20 0 1 150 wp_monsterHammer mat_deepMenColor2 none none arm_deepManShoulder mat_deepMenColor2 none ai_basic lst_deepDrops 2 none
+/ deep man soldier (5)
+deepManSoldier rce_deepMan clst_deepColors2 20 0 1 170 wp_monsterHammer mat_deepMenColor2 none none arm_deepManArmor mat_deepMenColor2 hat_deepManSoldierHat ai_basic lst_deepSoldierDrops 5 none
+/ flying blade (4)
+flyingBlade rce_fBlade clst_fBladeColors 2 0 -1 300 wp_monsterSaw mat_noMaterial none none arm_noArmor mat_noMaterial none ai_buzzsaw lst_flyingBladeDrops 4 clr_projectile
+/ ramRoller (8)
+ramRoller rce_roller clst_rollerColors 60 0 1 250 wp_monsterRam mat_deepMenColor2 none none arm_noArmor mat_noMaterial hat_rollerFlag ai_bigAndDumb lst_rollerDrops 8 none
+/ cannonRoller (10)
+cannonRoller rce_roller clst_rollerColors 60 1 -1 230 wp_monsterCannon mat_deepMenColor2 wp_monsterCannonSlam mat_deepMenColor2 arm_noArmor mat_noMaterial hat_rollerFlag ai_bigDumbArcher lst_roller2Drops 10 none
+/ turboRoller (17)
+turboRoller rce_roller clst_neoRollerColors 70 0 1 400 wp_monsterRam mat_deepMenColor2 none none arm_noArmor mat_noMaterial hat_rollerFlag ai_bigAndDumb lst_roller3Drops 17 none
+/ luxRoller (30)
+luxRoller rce_luxRoller clst_rollerColors 60 1 -1 230 wp_monsterLightCannon mat_deepMenColor2 wp_monsterWhelkSlam mat_whelkSlamMaterial arm_noArmor mat_noMaterial hat_rollerFlag ai_bigDumbArcher lst_roller4Drops 30 none
+/ wolf (1)
+wolf rce_wolf clst_wolfColors 8 0 -1 305 wp_monsterJaw mat_floraColor2 none none arm_noArmor mat_noMaterial none ai_basic lst_wolfDrops 1 none
+/ tinderman (2)
+tinderMan rce_tinderMen clst_tinderColors 10 0 -1 200 wp_monsterSword mat_floraColor2 none none arm_noArmor mat_noMaterial none ai_fencer lst_tinderDrops 2 none
+/ tinderman ranger (7)
+tinderManRanger rce_tinderMen clst_tinderColors 10 0 -1 190 wp_monsterKnife mat_floraColor2 wp_monsterBow mat_floraColor2 arm_noArmor mat_noMaterial none ai_fencerArcher lst_tinderRangerDrops 7 none
+/ tinderman slayer (18)
+tinderManSlayer rce_tinderMen clst_tinderColors2 12 0 -1 250 wp_monsterAxe mat_floraColor2 none none arm_noArmor mat_noMaterial none ai_fencer lst_tinderSlayerDrops 18 none
+/ leafer (2)
+leafer rce_leafer clst_leaferColors 12 0 -1 150 wp_monsterLeafthrower mat_noMaterial wp_monsterLeafthrower mat_noMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_leaferDrops 2 none
+/ fire whelk (10)
+whelk rce_whelk clst_whelkColors 40 0 4 90 wp_monsterWhelkSlam mat_whelkSlamMaterial wp_monsterWhelkFireball mat_whelkFireballMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_whelkDrops 10 clr_fire
+/ ice whelk (12)
+whelk2 rce_whelk clst_whelkColors 45 0 4 70 wp_monsterWhelkSlam mat_whelkSlamMaterial2 wp_monsterWhelkIceball mat_whelkIceballMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_whelk2Drops 12 clr_ice
+/ lightning whelk whelk (18)
+whelk3 rce_whelk clst_whelkColors 50 0 4 100 wp_monsterWhelkSlam mat_whelkSlamMaterial3 wp_monsterWhelkLightningball mat_whelkLightningballMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_whelk3Drops 18 clr_lightning
+/ flower (1)
+flower rce_flower clst_flowerColors 5 0 3 0 wp_monsterKnife mat_noMaterial none none arm_noArmor mat_noMaterial none ai_flower lst_flowerDrops 1 clr_floraColor1
+/ snowman (8)
+snowman rce_snowman clst_snowColors 14 0 0 200 wp_monsterIcicleSword mat_snowmanIce wp_monsterSnowballThrow mat_snowmanIce arm_noArmor mat_noMaterial none ai_basicArcher lst_snowmanDrops 8 clr_ice
+/ ice wolf (8)
+iceWolf rce_wolf clst_iceWolfColors 10 0 1 315 wp_monsterJaw mat_floraColor2 none none arm_noArmor mat_noMaterial none ai_basic lst_iceWolfDrops 8 none
+/ superior ice wolf (10)
+superiorIceWolf rce_wolf clst_iceWolfColors 10 0 -1 315 wp_monsterJaw mat_floraColor2 wp_monsterJaw mat_floraColor2 arm_noArmor mat_noMaterial none ai_iceBoltArcher lst_iceWolfDrops 10 clr_ice
+/ ice flower (10)
+iceFlower rce_flower clst_iceFlowerColors 6 0 0 0 wp_monsterKnife mat_noMaterial none none arm_noArmor mat_noMaterial none ai_iceFlower lst_iceFlowerDrops 10 clr_flower2
+/ deep man blue (10)
+deepManBlue rce_deepMan clst_deepColors3 20 0 1 150 wp_monsterHammer mat_deepMenColor2 none none arm_deepManCoat mat_deepMenColor1 hat_deepManBlueMask ai_basic lst_deepBlueDrops 10 none
+/ deep man town guard (20)
+deepManGuard rce_deepMan clst_deepColors4 20 0 1 180 wp_monsterGreatsword mat_deepMenColor2 none none arm_deepManArmor mat_deepMenColor2 hat_deepManFullHelm ai_basic lst_deepGuardDrops 20 none
+/ deep man town archer (20)
+deepManGuardArcher rce_deepMan clst_deepColors4 20 0 1 180 wp_monsterGreatsword mat_deepMenColor2 wp_monsterGreatCrossbow mat_deepMenColor2 arm_deepManArmor mat_deepMenColor2 hat_deepManFullHelm ai_basicArcher lst_deepGuardArcherDrops 20 none
+/ deep man elite (28)
+deepManElite rce_deepMan clst_deepColors5 24 0 1 180 wp_monsterGreatsword mat_deepMenColor2 none none arm_deepManEliteArmor mat_deepMenColor2 hat_deepManEliteHelm ai_basic lst_deepEliteDrops 28 clr_fire
+/ ice skull (11)
+iceSkull rce_flySkull clst_flySkullColors 4 0 8 300 wp_monsterIceSkullShot mat_snowmanIce none none arm_noArmor mat_noMaterial none ai_flySkull lst_iceSkullDrops 11 clr_ice
+/ flame skull (30)
+fireSkull rce_flySkull clst_flySkullColors2 4 0 8 300 wp_monsterFireSkullShot mat_fireSkullFire none none arm_noArmor mat_noMaterial none ai_flySkull lst_fireSkullDrops 30 clr_fire
+/ copter (22)
+copter rce_copter clst_copterColors 4 0 0 200 wp_monsterCopterShot mat_noMaterial none none arm_noArmor mat_noMaterial none ai_copter lst_copterDrops 22 clr_floraColor1
+/ blue Leafer (9)
+blueLeafer rce_leafer clst_leaferColors2 12 0 -1 150 wp_monsterBlueLeafthrower mat_noMaterial wp_monsterLeafthrower mat_noMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_leaferDrops 9 none
+/ black Leafer (18)
+blackLeafer rce_leafer clst_leaferColors3 12 0 -1 150 wp_monsterBlackLeafthrower mat_noMaterial wp_monsterLeafthrower mat_noMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher lst_leaferDrops 18 none
+/ purple flower (16)
+purpleFlower rce_flower clst_purpleFlowerColors 8 0 0 0 wp_monsterKnife mat_noMaterial none none arm_noArmor mat_noMaterial none ai_purpleFlower lst_purpleFlowerDrops 16 clr_flower3
+/ spoop (24)
+spoop rce_spoop clst_spoopColors 10 0 -1 300 wp_monsterBow mat_bone wp_monsterSword mat_bone arm_noArmor mat_noMaterial hat_spoopHat ai_fencerArcher lst_spoopDrops 24 clr_bone
+/ arigato (26)
+arigato rce_robot clst_arigatoColors 14 0 3 150 wp_monsterFist mat_noMaterial none none arm_noArmor mat_noMaterial none ai_arigato lst_arigatoDrops 26 clr_lightning
+/ race colorList maxHealth baseAttack baseDefense moveSpeed weapon weaponMaterial weapon2 weaponMaterial2 armor armorMaterial hat AI dropList level glowColor
+/ spider (5)
+spider rce_spider clst_spiderColors 12 -2 0 250 wp_monsterSpiderbite mat_spiderVenom none none arm_noArmor mat_noMaterial none ai_basic lst_spiderDrops 5 none
+/ spider hunter (10)
+spider2 rce_spider clst_spiderColors2 14 -2 0 210 wp_monsterSpiderbite mat_spiderVenom none none arm_noArmor mat_noMaterial none ai_stealthBasic lst_spiderDrops 10 none
+/ red legs (18)
+spider3 rce_spider clst_spiderColors3 14 -2 0 280 wp_monsterSpiderbite mat_spiderVenom none none arm_noArmor mat_noMaterial none ai_stealthBasic lst_spiderDrops 18 none
+/ spider king (26)
+spider4 rce_spider clst_spiderColors4 18 -2 0 280 wp_monsterSpiderbite mat_spiderVenom none none arm_noArmor mat_noMaterial none ai_stealthBasic lst_spiderDrops 26 none
+/ bosses
+/ wolfmaker
+wolfMaker rce_wprin clst_royalColors 10 0 0 250 none none none none arm_royalClothes mat_greenCloth hat_wprinCrown ai_wolfMaker none 0 clr_floraColor1
+/ wolfMade
+wolfMade rce_wolf clst_wolfColors 8 0 -1 230 wp_monsterJaw mat_floraColor2 none none arm_noArmor mat_noMaterial none ai_wolfMade none 0 none
+/ big wolf (8)
+bigWolf rce_bigWolf clst_wolfColors 120 0 0 900 wp_bossTool mat_noMaterial none none arm_noArmor mat_noMaterial none ai_bigWolf lst_bigWolfDrops 8 none
+/ neo roller (16)
+neoRoller rce_neoRoller clst_neoRollerColors 200 0 0 400 wp_bossTool mat_noMaterial none none arm_noArmor mat_noMaterial none ai_neoRoller lst_neoRollerDrops 16 none
+/ wprin (24)
+wprin rce_wprin clst_royalColors 50 1 0 400 wp_wprinStaff mat_wprinStaffMaterialBoss none none arm_royalClothes mat_greenCloth hat_wprinCrown ai_wprin lst_wprinDrops 24 clr_floraColor1
+/ wprin summons (22)
+wprinSummon1 rce_leafer clst_leaferColors3 12 0 -1 150 wp_monsterBlackLeafthrower mat_noMaterial wp_monsterLeafthrower mat_noMaterial arm_noArmor mat_noMaterial none ai_bigDumbArcher none 22 none
+wprinSummon2 rce_tinderMen clst_tinderColors2 12 0 -1 250 wp_monsterAxe mat_floraColor2 wp_monsterBow mat_floraColor2 arm_noArmor mat_noMaterial none ai_fencerArcher none 22 none
+/ king (32)
+king rce_king clst_royalColors 100 0 0 450 none none wp_monsterSword mat_deepMenColor2 arm_royalClothes mat_deepMenColor2 hat_kingCrown ai_king none 32 clr_deepMenColor1
+/ king summons (30)
+kingSummon1 rce_spoop clst_spoopColors 10 0 -1 300 wp_monsterBow mat_bone wp_monsterSword mat_bone arm_noArmor mat_noMaterial hat_spoopHat ai_fencerArcher none 30 clr_bone
+kingSummon2 rce_flySkull clst_flySkullColors2 4 0 8 300 wp_monsterFireSkullShot mat_fireSkullFire none none arm_noArmor mat_noMaterial none ai_buzzsaw none 30 clr_fire
+/
+/
+*HAT hat
+/ sheet frame color
+/ player hats
+littleHat sht_hat 1 clr_smoke
+bigHat sht_hat 2 clr_wolfLeather
+glasses sht_hat 3 clr_steel
+/ enemy hats
+wprinCrown sht_hat 7 clr_greenCloth
+kingCrown sht_hat 10 clr_gold
+villageGuardHat sht_hat 0 clr_iron
+villagerHat sht_hat 5 clr_wood
+villagerSnowHat sht_hat 6 clr_wolfLeather
+villagerSnowHatRich sht_hat 6 clr_ashLeather
+brittleSoldierHat sht_hat 0 clr_deepMenColor2
+brittleLoyalistHat sht_hat 4 clr_deepMenColor1
+brittleAcolyteHood sht_hat 8 clr_deepMenColor1
+spoopHat sht_hat 9 clr_deepMenColor2
+rollerFlag sht_hugeBody 5 clr_deepMenColor1
+deepManSoldierHat sht_bigHead 7 clr_deepMenColor2
+deepManBlueMask sht_bigHead 8 clr_smoke
+deepManFullHelm sht_bigHead 11 clr_deepMenColor2
+deepManEliteHelm sht_bigHead 20 clr_deepMenColor2
+/
+/
+*BACKGROUNDLAYER blyr
+/ xParal height yAdd sheet color numFrames frame* (1-?)
+caveBack 10 600 0 sht_background clr_caveStoneBacker 3 0 1 2
+caveBackStalag 50 800 400 sht_backgroundObjects clr_caveStoneBack 10 none none none none none none none 0 1 2
+caveBackStalac 50 800 0 sht_backgroundObjects clr_caveStoneBack 9 none none none none none none 3 4 5
+coldBack 10 600 0 sht_background clr_coldStoneBacker 3 0 1 2
+coldBackIcePillars 50 800 0 sht_bigBackgroundObjects clr_ice 20 none none none none none none none none none none none none none none none 0 1 2 3 4
+coldBackIcePillars2 40 800 0 sht_bigBackgroundObjects clr_ice 23 none none none none none none none none none none none none none none none none none none 0 1 2 3 4
+templeSkyline 70 800 400 sht_backgroundObjects clr_templeBack 10 6 7 8 9 10 11 12 13 14 15
+burntBack 10 600 0 sht_background clr_burntStoneBacker 3 0 1 2
+lava1 50 800 400 sht_backgroundObjects clr_fire 2 16 17
+lava2 50 800 400 sht_backgroundObjects clr_fire 2 18 19
+lavaStalag 50 800 300 sht_backgroundObjects clr_lavaStoneBack 18 none none none none none none 23 22 21 20 21 20 0 1 2 0 1 2
+lavaStalac 50 800 0 sht_backgroundObjects clr_lavaStoneBack 9 none none none none none none 3 4 5
+/
+/
+*AI ai
+/ AItype canJump knockbackImmune interruptImmune maxRange defenseHops magic/bossdata retreatMagic invincible teleportMagic fixedGender hurtSelf
+noAI 0 true false false none false none false false false none false
+basic 0 true false false none false none false false false none false
+stealthBasic 0 true false false none false mag_invisibility false false false none false
+fencer 0 true false false none true none false false false none false
+retreat 0 true false false none false mag_mending true false false none false
+retreatFire 0 true false false none false mag_firebolt true false false none false
+teleport 0 true true false none false mag_invisibility false false true none false
+arigato 0 true true false none false mag_sparkBolt false false false none false
+basicArcher 1 true false false 400 false none false false false none false
+fencerArcher 1 true false false 400 true none false false false none false
+iceBoltArcher 1 true false false 400 false mag_iceBolt false false false none false
+bigAndDumb 0 false true true none false none false false false none false
+bigDumbArcher 1 false true true 400 false none false false false none false
+flySkull 2 false false false none false none false false false none false
+buzzsaw 2 false false false none false none false false false none true
+flower 3 false true true 300 false mag_stemShower false false false none false
+iceFlower 3 false true true 400 false mag_iceShower false false false none false
+purpleFlower 3 false true true 450 false mag_purpleShower false false false none false
+animal 4 false false false none false none false false false none false
+chest 5 false false false none false none false false false none false
+bigWolf 6 true true true 400 false bdat_bigWolfData false false false 0 false
+wolfMaker 7 true true true 400 false bdat_wolfMakerData false true false 1 false
+wolfMade 8 true true true 400 false bdat_wolfMadeData false true false 0 false
+neoRoller 9 true true true 400 false bdat_neoRoller false false false 1 false
+copter 10 false false true 300 false none false false false none false
+wprin 11 true true true 400 false bdat_wprin false false false 1 false
+king 12 true true true 400 false bdat_king false false false 0 false
+/ npc ais
+/ linesStart linesEnd hatList clothingMaterialsList wander isMerchant
+t1Villager #t1VillagerStart #t1VillagerEnd lst_poorHats lst_poorMaterials true false
+t1Vendor #t1VendorStart #t1VendorEnd lst_richHats lst_richMaterials false true
+t1Guard #t1GuardStart #t1GuardEnd lst_guardHats none true false
+t2Villager #t2VillagerStart #t2VillagerEnd lst_snowHats none true false
+t2Vendor #t2VendorStart #t2VendorEnd lst_snowHatsRich none false true
+t2Guard #t2GuardStart #t2GuardEnd lst_snowHats none true false
+t3Villager #t3VillagerStart #t3VillagerEnd lst_darklanderHats lst_poorMaterials true false
+t3Vendor #t3VendorStart #t3VendorEnd lst_darklanderHats lst_richMaterials false true
+t3Guard #t3GuardStart #t3GuardEnd none none true false
+t4Villager #t4VillagerStart #t4VillagerEnd none none false false
+t4Vendor #t4VendorStart #t4VendorEnd none none false true
+/
+/
+*PARTICLE ptc
+/ sheet frame color xSpeed ySpeed gravity timer
+deathSmoke sht_particle 3 clr_deathSmoke 50 40 -250 25
+blood sht_particle 0 clr_blood 50 -150 300 110
+blueBlood sht_particle 0 clr_blueBlood 50 -150 300 110
+metalScrap sht_particle 4 clr_iron 50 -150 400 120
+woodScrap sht_particle 4 clr_wood 50 -150 350 120
+sap sht_particle 0 clr_floraColor1 35 -120 300 130
+flame sht_particle 1 clr_fire 40 30 -200 80
+greenSparkle sht_particle 2 clr_floraColor1 30 30 -200 90
+purpleSparkle sht_particle 2 clr_flower3 30 30 -200 90
+soulArrowSparkle sht_particle 2 clr_soulArrowSolid 30 10 -100 90
+smoke sht_particle 3 clr_smoke 40 30 -250 100
+snow sht_particle 5 clr_snow 30 -150 200 160
+spark sht_particle 7 clr_lightning 50 -50 0 90
+poisonSwirlie sht_particle 6 clr_poison 45 50 -200 200
+smokePuff sht_particle 3 clr_smoke 20 -80 -40 200
+smokePuffSmall sht_particle 3 clr_smoke 30 -120 -80 120
+/
+/
+*ITEM it
+/ frame name healsBase ammoAmount foodValue effect baseCost
+/ ammo (do not move)
+oneAmmo 23 #itOneAmmo 0 1 0 none 0
+fourAmmo 24 #itFourAmmo 0 4 0 none 5
+fourBoneAmmo 34 #itFourAmmo 0 4 0 none 5
+/ crafting materials
+ore 1 #itOre 0 0 0 none 5
+log 8 #itLog 0 0 0 none 5
+hide 10 #itHide 0 0 0 none 3
+tanningSolution 11 #itTanningSolution 0 0 0 none 4
+deadLeaf 12 #itDeadLeaf 0 0 0 none 2
+flower 18 #itFlower 0 0 0 none 4
+extract 37 #itExtract 0 0 0 none 4
+ingot 20 #itIngot 0 0 0 none 10
+leather 21 #itLeather 0 0 0 none 5
+spiderFang 29 #itSpiderFang 0 0 0 none 5
+bone 33 #itBone 0 0 0 none 5
+wire 35 #itWire 0 0 0 none 5
+/ potions
+potion 19 #itPotion 3 0 0 none 8
+poison 28 #itPoison 0 0 0 eff_venemous 10
+wolfPearl 30 #itWolfPearl 0 0 0 eff_wolfPearl 250
+/ food
+bread 20 #itBread 0 0 40 none 10
+bread2 20 #itBread2 0 0 40 none 10
+steak 27 #itSteak 0 0 50 none 10
+steak2 27 #itSteak2 0 0 50 none 10
+steak3 27 #itSteak3 0 0 45 none 8
+/
+/
+*RECIPIE rec
+/ item* materialList* (1-3 component) item* materialList* type (result) humansMake darklandersMake halfhumansMake requiresForge
+arrows it_log none none none none none it_fourAmmo none itC_item true true true false
+boneArrows it_bone none none none none none it_fourBoneAmmo none itC_item true true true false
+ingot it_ore lst_componentMetal1 it_ore lst_componentMetal2 none none it_ingot lst_resultMetal itC_item true true true true
+leather it_hide lst_componentLeather it_tanningSolution none none none it_leather lst_componentLeather itC_item true true true false
+potion it_flower lst_componentFlower it_flower lst_componentFlower none none it_potion lst_componentFlower itC_item true true true false
+potion it_extract lst_componentFlower it_extract lst_componentFlower none none it_potion lst_componentFlower itC_item true true true false
+poison it_spiderFang none it_spiderFang none none none it_poison none itC_item true true true false
+tanningSolution it_deadLeaf none it_deadLeaf none none none it_tanningSolution none itC_item true true true false
+knife it_ingot lst_resultMetal none none none none wp_knife lst_resultMetal itC_weapon true true true true
+sword it_ingot lst_resultMetal it_ingot lst_resultMetal none none wp_sword lst_resultMetal itC_weapon true true true true
+axe it_ingot lst_resultMetal it_log none none none wp_axe lst_resultMetal itC_weapon true true true true
+boneAxe it_ingot lst_resultMetal it_bone none none none wp_axe lst_resultMetal itC_weapon true true true true
+bow it_ingot lst_resultMetal it_log none it_log none wp_bow lst_resultMetal itC_weapon true true true true
+boneBow it_ingot lst_resultMetal it_bone none it_bone none wp_bow lst_resultMetal itC_weapon true true true true
+crossbow it_ingot lst_resultMetal it_ingot lst_resultMetal it_log none wp_crossbow lst_resultMetal itC_weapon true true true true
+boneCrossbow it_ingot lst_resultMetal it_ingot lst_resultMetal it_bone none wp_crossbow lst_resultMetal itC_weapon true true true true
+whip it_leather lst_componentLeather none none none none wp_whip lst_componentLeather itC_weapon true true true false
+mail it_ingot lst_resultMetal it_ingot lst_resultMetal it_wire none arm_mail lst_resultMetal itC_armor true true true true
+plate it_ingot lst_resultMetal it_ingot lst_resultMetal it_ingot lst_resultMetal arm_plate lst_resultMetal itC_armor true false true true
+darklanderPlate it_ingot lst_resultMetal it_ingot lst_resultMetal it_ingot lst_resultMetal arm_darklanderPlate lst_resultMetal itC_armor false true false true
+jerkin it_leather lst_componentLeather it_hide lst_componentLeather none none arm_jerkin lst_componentLeather itC_armor true true true false
+/
+/
+*MAGIC mag
+/ form damage effect particle particleNum particleRadius projectile projectileNum projectileMagic pulses pulseOffset initialDelay sound
+/ form 0: simple, single-target magic effects (meant for on-hit material effects)
+/ you can simulate a DoT effect like fire or poison using pulses and initial delay (like for ligmite flare)
+ligmiteFlare 0 1 none ptc_flame 15 20 none 0 none 2 20 20 snd_fire
+whelkSlam 0 1 none ptc_flame 20 30 none 0 none 4 20 0 snd_boom
+whelkSlam2 0 3 eff_slow ptc_snow 20 30 none 0 none 1 0 0 snd_smoke
+whelkSlam3 0 4 none ptc_spark 20 30 none 0 none 1 0 0 snd_electric
+snowBurst 0 0 eff_slow ptc_snow 15 20 none 0 none 1 0 0 snd_ice
+stun 0 0 eff_paralysisShort ptc_spark 15 20 none 0 none 1 0 0 snd_electric
+poisonBasic 0 1 none ptc_poisonSwirlie 1 20 none 0 none 3 60 60 none
+poisonDeadly 0 1 none ptc_poisonSwirlie 1 20 none 0 none 8 60 60 none
+/ form 1: fire a projectile
+firebolt 1 2 none ptc_flame 10 40 prj_firebolt 1 mag_ligmiteFlare 1 0 0 snd_fire
+fireboltFour 1 2 none ptc_flame 10 40 prj_firebolt 1 mag_ligmiteFlare 4 8 0 snd_fire
+stemShower 1 1 none ptc_greenSparkle 2 40 prj_stemPower 1 none 5 8 0 snd_org
+iceShower 1 1 none ptc_snow 2 40 prj_icePower 1 none 6 9 0 snd_ice
+purpleShower 1 1 none ptc_purpleSparkle 2 40 prj_purplePower 1 none 6 15 0 snd_org
+iceBolt 1 3 none ptc_snow 10 40 prj_iceBolt 1 none 1 0 0 snd_ice
+iceBoltSlows 1 3 none ptc_snow 10 40 prj_iceBolt 1 mag_snowBurst 1 0 0 snd_ice
+sparkBolt 1 3 none ptc_spark 10 40 prj_sparkBolt 1 mag_stun 1 0 0 snd_electric
+wprinStaff 1 1 none ptc_greenSparkle 2 40 prj_stemPower 1 none 2 8 0 snd_org
+wprinStaffBoss 1 1 none ptc_greenSparkle 2 40 prj_stemPower 1 none 4 8 0 snd_org
+moonBurst 1 3 none ptc_greenSparkle 6 40 prj_blueMoon 1 none 3 20 0 snd_light
+/ form 2: self-targeting healing/beneficial
+mending 2 4 none ptc_greenSparkle 10 40 none 0 none 1 0 0 none
+revive 2 1 none ptc_greenSparkle 5 40 none 0 none 1 0 0 none
+invisibility 2 0 eff_invisibility ptc_smoke 20 40 none 0 none 1 0 0 snd_smoke
+soulArrow 2 0 eff_soulArrow ptc_soulArrowSparkle 10 40 none 0 none 1 0 0 snd_buff
+puffOnly 2 0 none ptc_smoke 20 40 none 0 none 1 0 0 snd_smoke
+greenSparkles 2 0 none ptc_greenSparkle 6 40 none 0 none 1 0 0 snd_light
+/ form 3: area-of-effect damage
+whelkFireball 0 5 none ptc_flame 50 40 none 0 none 1 0 0 snd_boom
+bombFireball 0 3 none ptc_flame 30 35 none 0 none 1 0 0 snd_boom
+whelkIceball 0 5 eff_slow ptc_snow 50 40 none 0 none 1 0 0 snd_smoke
+whelkLightningball 0 6 none ptc_spark 50 40 none 0 none 1 0 0 snd_electric
+/ form 4: particles from shooting area
+smokeOnly 4 0 none ptc_smoke 1 5 none 0 none 1 0 0 none
+/ form 5: left screen AoE
+fireyBurstL 5 5 none ptc_flame 200 260 none 0 none 1 0 0 snd_boom
+/ form 6: right screen AoE
+fireyBurstR 6 5 none ptc_flame 200 260 none 0 none 1 0 0 snd_boom
+/ form 7: floor AoE
+snowyBurst 7 3 eff_slow ptc_snow 200 60 none 0 none 1 0 0 snd_smoke
+/ form 8: random (3 possibilities)
+randomBolt 8 0 none none 0 0 none 0 none 3 15 0 none
+randomFire 1 2 none ptc_flame 10 40 prj_firebolt 1 mag_ligmiteFlare 1 0 0 snd_fire
+randomIce 1 3 none ptc_snow 10 40 prj_iceBolt 1 mag_snowBurst 1 0 0 snd_ice
+randomSpark 1 3 none ptc_spark 10 40 prj_sparkBolt 1 mag_stun 1 0 0 snd_electric
+/ form 9: rain
+poisonRain 9 0 none ptc_greenSparkle 2 40 prj_poisonDrop 1 mag_poisonBasic 25 8 0 snd_org
+flameShower 9 0 none ptc_flame 2 40 prj_firebolt 1 mag_ligmiteFlare 10 10 0 snd_fire
+/
+/
+*MAGICITEM mgit
+/ magic meter frame color name baseCost
+/ note that no spell should cost under 15 or so meter at the least, since the efficiency perk can reduce costs by 10
+arrowInterpreter mag_soulArrow 30 14 clr_soulArrowSolid #arrowInterpreterName 100
+fireInterpreter mag_firebolt 20 14 clr_fire #fireInterpreterName 100
+iceInterpreter mag_iceBoltSlows 20 14 clr_ice #iceInterpreterName 110
+lightningInterpreter mag_sparkBolt 20 14 clr_lightning #lightningInterpreterName 120
+mendingInterpreter mag_mending 38 14 clr_floraColor1 #mendingInterpreterName 100
+invisibilityInterpreter mag_invisibility 50 14 clr_smoke #invisibilityInterpreterName 100
+diode mag_randomBolt 30 31 clr_deepMenColor1 #diodeName 300
+/
+/
+*PERK prk
+/ frame color modifiesKey adds max givesMagicItem name minTileset
+/ balance note: the highest base attack and defense the player can get is 3 each
+/ might perks (frame 15)
+healthPerk 15 clr_perkPassive 2 2 30 none #healthPerkName 0
+defensePerk 15 clr_perkPassive 1 1 3 none #defensePerkName 0
+mendingPerk 15 clr_perkActive none 0 0 mgit_mendingInterpreter #mendingPerkName 0
+/ finesse perks (frame 16)
+attackPerk 16 clr_perkPassive 0 1 3 none #attackPerkName 0
+moveSpeedPerk 16 clr_perkPassive 3 25 400 none #moveSpeedPerkName 0
+invisibilityPerk 16 clr_perkActive none 0 0 mgit_invisibilityInterpreter #invisibilityPerkName 0
+quiverPerk 16 clr_perkPassive 5 2 20 none #quiverPerkName 0
+/ magic perks (frame 17)
+fMagePerk 17 clr_perkActive none 0 0 mgit_fireInterpreter #fMagePerkName 0
+iMagePerk 17 clr_perkActive none 0 0 mgit_iceInterpreter #iMagePerkName 1
+lMagePerk 17 clr_perkActive none 0 0 mgit_lightningInterpreter #lMagePerkName 2
+arrowPerk 17 clr_perkActive none 0 0 mgit_arrowInterpreter #arrowPerkName 0
+efficiencyPerk 17 clr_perkPassive 4 5 10 none #efficiencyPerkName 0
+/
+/
+*ITEMCAT itC
+item
+armor
+weapon
+magicItem
+/
+/
+*EFFECT eff
+/ duration beneficial effect* (1-?)
+invisibility 500 true 50 3
+slow 300 false 50 0
+soulArrow 400 true prj_soulArrow 2 clr_soulArrowSolid 125
+venemous 100 true mag_poisonDeadly
+paralysisShort 120 false
+paralysisLong 300 false
+wolfPearl 0 true prj_bloodWaveFast 2 6
+/
+/
+*TRAP trp
+/ sheet color frameStart frameEnd powFrame animLength cycleLength damage hitX hitY hitW hitH projectile magicEffect
+/ cycle traps
+spikes sht_bigBody clr_iron 1 8 2 60 200 3 -14 -30 28 30 none none
+fireballs sht_bigHead clr_astralMetal 16 19 17 40 130 2 0 -12 0 0 prj_fireball mag_ligmiteFlare
+/ detect traps (note: must be projectile traps, cannot animate; has a "dummy" cycle length)
+darts sht_bigHead clr_iron 10 none none none 60 1 0 -20 0 0 prj_dart mag_poisonBasic
+/ constant traps (must be melee traps)
+bombs sht_bigBody clr_smoke 11 none none none none 0 -14 -20 28 20 none mag_bombFireball
+/
+/
+*DOOR dor
+/ frame color greenery1 greenery2
+stoneDoor 6 clr_caveStone none 7
+snowDoor 6 clr_coldStone 7 7
+templeDoor 14 clr_temple none 15
+fireDoor 6 clr_burntStone 7 7
+/
+/
+*MAPMOD mpmd
+/ doorFrame doorColor creatureList creatureNum trapList trapNum
+spiders 8 clr_white lst_spiderList 8 none 0
+treasure 9 clr_goldGlow lst_chestList 1 lst_genericTrapList 4
+/
+/
+*BOSSDATA bdat
+/ the order of data is pretty arbitrary in these; read the code to see what variable does what
+bigWolfData bts_chargeBuildup 150 bts_spewBuildupStart bts_spewBuildupEnd 100 prj_bloodWave 6 40 50 3 5 50 25 75 snd_fleshHit snd_roar
+wolfMakerData 500 ctyp_wolfMade 150 #wolfMakerLine1 400 ctyp_bigWolf 550 550 #wolfMakerLine2 750 mag_invisibility
+wolfMadeData 580 400
+neoRoller bts_rollerDark #rollerLine1 100 none 30 30 11 prj_sparkBolt 2 25 8 prj_fireballSpecial 110 mag_smokeOnly 6 4 mag_fireyBurstL mag_fireyBurstR prj_snowShot 7 12 15 0 mag_snowyBurst 1 snd_electric snd_fire snd_ice
+wprin #wprinLine1 100 100 750 100 425 300 mag_puffOnly 25 75 125 150 700 2 ctyp_wprinSummon1 ctyp_wprinSummon2 mag_poisonRain 300 mag_moonBurst 120 mag_greenSparkles prj_blueMoon 2 10 120 250
+king 20 #kingLine1 100 150 150 700 2 ctyp_kingSummon1 ctyp_kingSummon2 75 mag_fireboltFour 60 mag_flameShower 120
+/
+/
+*BOSSTOOLSTATE bts
+/ partAdd* (1-?)
+/ big wolf: legs body legs tail head glow
+chargeBuildup 0 1 0 17 2 0
+spewBuildupStart 0 1 0 17 1 1
+spewBuildupM1 0 1 0 17 1 2
+spewBuildupM2 0 1 0 17 1 3
+spewBuildupEnd 0 1 0 17 1 4
+/ neo roller: body trim lotus whiteglow redglow yellowglow blueglow
+rollerDark 0 0 0 none none none none
+rollerFade1 0 0 0 8 none none none
+rollerFade2 0 0 0 1 none none none
+rollerFade3 0 0 0 7 none none none
+rollerBase 0 0 0 0 none none none
+rollerRed 0 0 0 none 0 none none
+rollerYellow 0 0 0 none none 0 none
+rollerBlue 0 0 0 none none none 0
+/
+/
+*TOWNDATA tdat
+/ shopInventory/blank (0) enterance (1) exit (2) villager (3) vendor (4) guard (5) villagerHouse (6) merchantHouse (7) torch (8) forge (9)
+caveStoneTown lst_caveStoneTownShop none none ctyp_npcHumanVillager ctyp_npcHumanVendor ctyp_npcHumanGuard decor_house decor_house2 decor_torch decor_forge
+coldStoneTown lst_coldStoneTownShop none none ctyp_npcSnowVillager ctyp_npcSnowVendor ctyp_npcSnowGuard decor_tent decor_cratePile decor_brazier decor_blueForge
+templeTown lst_templeTownShop none none ctyp_npcTempleVillager ctyp_npcTempleVendor ctyp_npcTempleGuard decor_templeHouse decor_templeShop decor_lamp decor_darkForge
+lavaTown lst_lavaTownShop none none ctyp_npcLavaVillager ctyp_npcLavaVendor none decor_collumn decor_templeShopBurnt decor_lavaLamp decor_magmaForge
+/
+/
+*TOWNSHAPE tshp
+/ solid* npc* decoration* (1-12) PLACEHOLDER solid* npc* decoration* (1-12)
+/ every town should have an enterance (1), exit (2), merchant (4), and forge (9) at the very minimum
+/ name
+/ true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0
+/ none
+/ true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0 true 0 0
+shape1 false 0 0 true 0 0 true 0 8 true 0 0 true 4 7 true 0 0 true 0 9 true 3 0 true 0 0 true 0 8 false 0 0 false 0 0 none true 0 1 true 5 8 true 3 0 true 0 6 true 0 0 true 3 0 true 3 6 true 0 0 true 0 0 true 0 0 true 5 8 true 0 2
+shape2 false 0 0 true 5 8 true 0 0 false 0 0 false 0 0 false 0 0 true 0 0 true 3 0 true 0 9 true 0 0 true 5 8 true 0 2 none true 0 1 true 5 8 true 0 0 true 3 6 true 4 7 true 0 0 true 3 0 true 0 6 false 0 0 false 0 0 false 0 0 false 0 0
+shape3 true 0 1 true 5 8 false 0 0 false 0 0 false 0 0 false 0 0 false 0 0 false 0 0 false 0 0 false 0 0 true 5 8 true 0 2 none false 0 0 false 0 0 true 3 0 true 0 6 true 0 8 true 3 6 true 0 9 true 3 0 true 4 7 true 0 0 false 0 0 false 0 0
+shape4 true 3 9 true 0 0 true 4 7 true 0 0 true 0 0 false 0 0 false 0 0 true 0 0 true 0 0 true 5 8 false 0 0 true 0 2 none false 0 0 false 0 0 false 0 0 true 0 1 true 5 8 true 0 0 true 0 0 true 3 8 true 0 6 true 0 0 true 3 6 false 0 0
+shape5 true 0 1 true 5 8 true 0 0 true 0 0 true 0 0 false 0 0 false 0 0 false 0 0 false 0 0 false 0 0 true 5 8 true 0 2 none false 0 0 false 0 0 false 0 0 true 3 6 true 3 8 true 0 0 true 4 7 true 0 0 true 0 6 true 3 0 true 3 9 true 0 9
+/
+/
+*DECORATION decor
+/ sheet frame color glowColor glowX glowY particle particleX particleY particleSpeed isForge
+house sht_decorationsLarge 0 clr_wood clr_goldGlow 50 30 none 0 0 0 false
+house2 sht_decorationsLarge 2 clr_caveStone clr_goldGlow 32 30 ptc_smokePuff 76 -4 75 false
+tent sht_decorationsLarge 4 clr_blueCloth clr_goldGlow 50 35 none 0 0 0 false
+templeHouse sht_decorationsLarge 5 clr_temple clr_greenGlow 50 10 none 0 0 0 false
+templeShop sht_decorationsLarge 6 clr_temple clr_greenGlow 66 20 none 0 0 0 false
+templeShopBurnt sht_decorationsLarge 7 clr_burntStoneBack none 0 0 ptc_smokePuff 67 -8 20 false
+collumn sht_decorations 3 clr_burntStoneBack none 0 0 none 0 0 0 false
+torch sht_decorations 0 clr_wood clr_fire 24 22 ptc_smokePuffSmall 24 22 250 false
+brazier sht_decorations 1 clr_iron clr_fire 25 20 ptc_smokePuff 25 20 200 false
+lamp sht_decorations 2 clr_darkMetal clr_greenGlow 25 25 none 0 0 0 false
+lavaLamp sht_decorations 2 clr_magmaSteel clr_fire 25 25 none 0 0 0 false
+cratePile sht_decorationsLarge 1 clr_wood none 0 0 none 0 0 0 false
+forge sht_decorationsLarge 3 clr_iron clr_fire 32 9 ptc_smokePuff 30 6 400 true
+blueForge sht_decorationsLarge 3 clr_blueIron clr_fire 32 9 ptc_smokePuff 30 6 400 true
+darkForge sht_decorationsLarge 3 clr_darkMetal clr_greenGlow 32 9 ptc_smokePuff 30 6 400 true
+magmaForge sht_decorationsLarge 3 clr_magmaSteel clr_fire 32 9 ptc_smokePuff 30 6 400 true
+/
+/
+*SPECIALCHARACTER schar
+/ frame color
+dollarSign 10 clr_gold
+parOpen 11 none
+parClose 12 none
+period 13 none
+colon 14 none
+attack 15 clr_copper
+defense 16 clr_iron
+dash 17 none
+/
+/
+*SONG sng
+/ fileName
+stone #sngStone
+snow #sngSnow
+temple #sngTemple
+lava #sngLava
+boss #sngBoss
+menu #sngMenu
+/
+/
+*SOUND snd
+/ fileName
+heal #sndHeal
+smoke #sndSmoke
+summon #sndSummon
+eat #sndEat
+select #sndSelect
+press #sndPress
+cash #sndCash
+buff #sndBuff
+bow #sndBow
+whip #sndWhip
+knife #sndKnife
+sword #sndSword
+hammer #sndHammer
+cannon #sndCannon
+fleshHit #sndFlesh
+stoneHit #sndStone
+metalHit #sndMetal
+woodHit #sndWood
+fire #sndFire
+ice #sndIce
+light #sndLight
+electric #sndElectric
+org #sndOrg
+boom #sndBoom
+roar #sndRoar
+/
+/

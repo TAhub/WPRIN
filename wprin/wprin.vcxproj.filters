@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Mobile">
+      <UniqueIdentifier>{ccccf855-b856-414d-b845-1f17cdfa640d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Misc Entities">
+      <UniqueIdentifier>{51837815-cb30-428b-b87c-5ed7c3e6f891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misc Entities">
+      <UniqueIdentifier>{1ed0c8a4-a631-45b8-8944-8d9eb22b8863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Mobile">
+      <UniqueIdentifier>{ddabed32-4132-4100-a8cd-0fcf2ca7ae33}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="data.txt" />
+    <None Include="lines.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="creature.h">
+      <Filter>Header Files\Mobile</Filter>
+    </ClInclude>
+    <ClInclude Include="drawer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\Mobile</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="slave.h">
+      <Filter>Header Files\Mobile</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Header Files\Mobile</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>Header Files\Misc Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="damageNumber.h">
+      <Filter>Header Files\Misc Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="particle.h">
+      <Filter>Header Files\Misc Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="projectile.h">
+      <Filter>Header Files\Misc Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="trap.h">
+      <Filter>Header Files\Misc Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="characterDesigner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="npc.h">
+      <Filter>Header Files\Mobile</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="soundPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="wprin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="creature.cpp">
+      <Filter>Source Files\Mobile</Filter>
+    </ClCompile>
+    <ClCompile Include="drawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\Mobile</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="slave.cpp">
+      <Filter>Source Files\Mobile</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Source Files\Mobile</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>Source Files\Misc Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="particle.cpp">
+      <Filter>Source Files\Misc Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="projectile.cpp">
+      <Filter>Source Files\Misc Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="damageNumber.cpp">
+      <Filter>Source Files\Misc Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="trap.cpp">
+      <Filter>Source Files\Misc Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="characterDesigner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="npc.cpp">
+      <Filter>Source Files\Mobile</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="soundPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
